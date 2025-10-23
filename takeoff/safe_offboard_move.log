@@ -1,0 +1,138 @@
+2025-10-23 17:14:53,500 - INFO - 🔌 اتصال به سیستم: udp://:14540
+2025-10-23 17:14:53,571 - INFO - MAVSDK version: v3.10.2 (mavsdk_impl.cpp:32)
+2025-10-23 17:14:53,610 - INFO - Waiting to discover system on udp://:14540... (connection_initiator.h:20)
+2025-10-23 17:14:53,610 - WARNING - Connection using udp:// is deprecated, please use udpin:// or udpout:// (cli_arg.cpp:28)
+2025-10-23 17:14:53,612 - INFO - New system on: 127.0.0.1:14580 (with system ID: 1) (udp_connection.cpp:263)
+2025-10-23 17:14:53,710 - WARNING - Vehicle type changed (new type: 2, old type: 0) (system_impl.cpp:323)
+2025-10-23 17:14:53,710 - INFO - System discovered (connection_initiator.h:62)
+2025-10-23 17:14:53,728 - INFO - Server started (grpc_server.cpp:177)
+2025-10-23 17:14:53,728 - INFO - Server set to listen on 0.0.0.0:50051 (grpc_server.cpp:178)
+2025-10-23 17:14:54,446 - INFO - ✅ اتصال برقرار شد
+2025-10-23 17:14:54,447 - INFO - ⚙️ در حال درخواست تنظیم پارامترهای ایمن (با محافظت)...
+2025-10-23 17:14:54,447 - INFO - ✅ استفاده از پارامترهای پیش‌فرض Pixhawk
+2025-10-23 17:14:54,447 - INFO - 🔍 شروع چک‌های پیش‌پرواز (GPS, battery, IMU)...
+2025-10-23 17:14:54,738 - INFO - ✅ GPS و موقعیت خانه آماده است.
+2025-10-23 17:14:54,932 - INFO - ✅ باتری: 10000.0%
+2025-10-23 17:14:55,747 - INFO - ✅ IMU کالیبره شده و سالم است.
+2025-10-23 17:14:55,747 - INFO - 🛡️ لطفاً تیک‌آف دستی انجام دهید و به حالت Offboard بروید
+2025-10-23 17:14:57,780 - INFO - 🟡 وضعیت: Mode=HOLD | Alt=0.1m | Armed=False
+2025-10-23 17:15:01,851 - INFO - 🟡 وضعیت: Mode=HOLD | Alt=0.1m | Armed=False
+2025-10-23 17:15:05,930 - INFO - 🟡 وضعیت: Mode=HOLD | Alt=0.2m | Armed=False
+2025-10-23 17:15:10,014 - INFO - 🟡 وضعیت: Mode=HOLD | Alt=0.1m | Armed=False
+2025-10-23 17:15:14,122 - INFO - 🟡 وضعیت: Mode=HOLD | Alt=0.1m | Armed=False
+2025-10-23 17:15:18,230 - INFO - 🟡 وضعیت: Mode=HOLD | Alt=0.0m | Armed=False
+2025-10-23 17:15:22,309 - INFO - 🟡 وضعیت: Mode=HOLD | Alt=0.0m | Armed=False
+2025-10-23 17:15:26,391 - INFO - 🟡 وضعیت: Mode=HOLD | Alt=0.0m | Armed=False
+2025-10-23 17:15:30,489 - INFO - 🟡 وضعیت: Mode=HOLD | Alt=-0.1m | Armed=False
+2025-10-23 17:15:34,551 - INFO - 🟡 وضعیت: Mode=HOLD | Alt=0.1m | Armed=False
+2025-10-23 17:15:38,583 - INFO - 🟡 وضعیت: Mode=HOLD | Alt=0.1m | Armed=False
+2025-10-23 17:15:42,614 - INFO - 🟡 وضعیت: Mode=HOLD | Alt=0.3m | Armed=False
+2025-10-23 17:15:46,644 - INFO - 🟡 وضعیت: Mode=HOLD | Alt=0.5m | Armed=True
+2025-10-23 17:15:50,701 - INFO - 🟡 وضعیت: Mode=TAKEOFF | Alt=0.0m | Armed=True
+2025-10-23 17:15:54,786 - INFO - 🟡 وضعیت: Mode=TAKEOFF | Alt=0.1m | Armed=True
+2025-10-23 17:15:58,870 - INFO - 🟡 وضعیت: Mode=HOLD | Alt=2.4m | Armed=True
+2025-10-23 17:16:02,958 - INFO - 🟡 وضعیت: Mode=HOLD | Alt=2.8m | Armed=True
+2025-10-23 17:16:07,046 - INFO - 🟡 وضعیت: Mode=HOLD | Alt=3.0m | Armed=True
+2025-10-23 17:16:11,135 - INFO - 🟡 وضعیت: Mode=HOLD | Alt=3.1m | Armed=True
+2025-10-23 17:16:13,177 - WARNING - ❌ شرایط برای شروع مناسب نیست!
+2025-10-23 17:16:13,178 - WARNING -    - لطفاً حالت را به OFFBOARD تغییر دهید
+2025-10-23 17:16:15,220 - INFO - 🟡 وضعیت: Mode=HOLD | Alt=3.0m | Armed=True
+2025-10-23 17:16:19,313 - INFO - 🟡 وضعیت: Mode=HOLD | Alt=2.9m | Armed=True
+2025-10-23 17:16:23,403 - INFO - 🟡 وضعیت: Mode=HOLD | Alt=3.0m | Armed=True
+2025-10-23 17:16:27,461 - INFO - 🟡 وضعیت: Mode=HOLD | Alt=3.0m | Armed=True
+2025-10-23 17:16:31,486 - INFO - 🟡 وضعیت: Mode=HOLD | Alt=3.0m | Armed=True
+2025-10-23 17:16:35,511 - INFO - 🟡 وضعیت: Mode=HOLD | Alt=3.0m | Armed=True
+2025-10-23 17:16:39,537 - INFO - 🟡 وضعیت: Mode=HOLD | Alt=2.9m | Armed=True
+2025-10-23 17:16:43,562 - INFO - 🟡 وضعیت: Mode=TAKEOFF | Alt=2.9m | Armed=True
+2025-10-23 17:16:47,588 - INFO - 🟡 وضعیت: Mode=TAKEOFF | Alt=7.0m | Armed=True
+2025-10-23 17:16:51,612 - INFO - 🟡 وضعیت: Mode=HOLD | Alt=7.5m | Armed=True
+2025-10-23 17:16:55,691 - INFO - 🟡 وضعیت: Mode=HOLD | Alt=7.7m | Armed=True
+2025-10-23 17:16:59,774 - INFO - 🟡 وضعیت: Mode=HOLD | Alt=7.7m | Armed=True
+2025-10-23 17:17:03,865 - INFO - 🟡 وضعیت: Mode=HOLD | Alt=7.7m | Armed=True
+2025-10-23 17:17:05,911 - WARNING - ❌ شرایط برای شروع مناسب نیست!
+2025-10-23 17:17:05,912 - WARNING -    - لطفاً حالت را به OFFBOARD تغییر دهید
+2025-10-23 17:17:07,953 - INFO - 🟡 وضعیت: Mode=HOLD | Alt=7.7m | Armed=True
+2025-10-23 17:17:07,953 - WARNING - ❌ شرایط برای شروع مناسب نیست!
+2025-10-23 17:17:07,953 - WARNING -    - لطفاً حالت را به OFFBOARD تغییر دهید
+2025-10-23 17:17:12,042 - INFO - 🟡 وضعیت: Mode=HOLD | Alt=7.8m | Armed=True
+2025-10-23 17:17:15,447 - INFO - 🧹 انجام تمیزکاری ایمن (توقف setpoint و خروج از Offboard)
+2025-10-23 17:17:15,449 - INFO - 🧹 انجام تمیزکاری ایمن (توقف setpoint و خروج از Offboard)
+2025-10-23 17:17:15,451 - ERROR - unhandled exception during asyncio.run() shutdown
+task: <Task finished name='Task-1' coro=<main() done, defined at /home/mh/Shahin/takeoff/main.py:434> exception=<AioRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:50051: Failed to connect to remote host: connect: Connection refused (111)"
+	debug_error_string = "UNKNOWN:Error received from peer  {grpc_status:14, grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:50051: Failed to connect to remote host: connect: Connection refused (111)"}"
+>>
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/asyncio/runners.py", line 44, in run
+    return loop.run_until_complete(main)
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 636, in run_until_complete
+    self.run_forever()
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 603, in run_forever
+    self._run_once()
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 1871, in _run_once
+    event_list = self._selector.select(timeout)
+  File "/usr/lib/python3.10/selectors.py", line 469, in select
+    fd_event_list = self._selector.poll(timeout, max_ev)
+KeyboardInterrupt
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mh/.local/lib/python3.10/site-packages/grpc/aio/_call.py", line 651, in _send_unary_request
+    await self._cython_call.initiate_unary_stream(
+  File "src/python/grpcio/grpc/_cython/_cygrpc/aio/call.pyx.pxi", line 430, in initiate_unary_stream
+  File "src/python/grpcio/grpc/_cython/_cygrpc/aio/callback_common.pyx.pxi", line 166, in _receive_initial_metadata
+  File "src/python/grpcio/grpc/_cython/_cygrpc/aio/callback_common.pyx.pxi", line 99, in execute_batch
+asyncio.exceptions.CancelledError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mh/Shahin/takeoff/main.py", line 394, in run
+    ready = await self.wait_manual_takeoff_and_offboard()
+  File "/home/mh/Shahin/takeoff/main.py", line 191, in wait_manual_takeoff_and_offboard
+    armed_state = await self.drone.telemetry.armed().__anext__()
+  File "/home/mh/.local/lib/python3.10/site-packages/mavsdk/telemetry.py", line 3351, in armed
+    async for response in armed_stream:
+  File "/home/mh/.local/lib/python3.10/site-packages/grpc/aio/_call.py", line 362, in _fetch_stream_responses
+    message = await self._read()
+  File "/home/mh/.local/lib/python3.10/site-packages/grpc/aio/_call.py", line 378, in _read
+    await self._preparation
+asyncio.exceptions.CancelledError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mh/Shahin/takeoff/main.py", line 437, in main
+    if await mission.run():
+  File "/home/mh/Shahin/takeoff/main.py", line 429, in run
+    await self.safe_cleanup()
+  File "/home/mh/Shahin/takeoff/main.py", line 374, in safe_cleanup
+    await self.drone.offboard.stop()
+  File "/home/mh/.local/lib/python3.10/site-packages/mavsdk/offboard.py", line 918, in stop
+    response = await self._stub.Stop(request)
+  File "/home/mh/.local/lib/python3.10/site-packages/grpc/aio/_call.py", line 330, in __await__
+    raise _create_rpc_error(
+grpc.aio._call.AioRpcError: <AioRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "sendmsg: Connection reset by peer (104)"
+	debug_error_string = "UNKNOWN:Error received from peer  {grpc_status:14, grpc_message:"sendmsg: Connection reset by peer (104)"}"
+>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mh/Shahin/takeoff/main.py", line 444, in main
+    await mission.safe_cleanup()
+  File "/home/mh/Shahin/takeoff/main.py", line 374, in safe_cleanup
+    await self.drone.offboard.stop()
+  File "/home/mh/.local/lib/python3.10/site-packages/mavsdk/offboard.py", line 918, in stop
+    response = await self._stub.Stop(request)
+  File "/home/mh/.local/lib/python3.10/site-packages/grpc/aio/_call.py", line 330, in __await__
+    raise _create_rpc_error(
+grpc.aio._call.AioRpcError: <AioRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:50051: Failed to connect to remote host: connect: Connection refused (111)"
+	debug_error_string = "UNKNOWN:Error received from peer  {grpc_status:14, grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:50051: Failed to connect to remote host: connect: Connection refused (111)"}"
+>
