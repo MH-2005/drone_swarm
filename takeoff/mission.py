@@ -263,7 +263,7 @@ class SentryMission:
                         except OffboardError:
                             pass
                 
-                await asyncio.sleep(0.5)
+                await asyncio.sleep(0.15)
 
             except (asyncio.CancelledError, KeyboardInterrupt):
                 self.log.info("Sentry mode interrupted by user. Shutting down.")
