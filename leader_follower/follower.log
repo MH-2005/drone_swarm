@@ -1,0 +1,47 @@
+2025-10-24 20:13:10,197 [INFO] Connecting to system...
+2025-10-24 20:13:10,235 [INFO] MAVSDK version: v3.10.2 (mavsdk_impl.cpp:32)
+2025-10-24 20:13:10,255 [INFO] Waiting to discover system on udp://:14540... (connection_initiator.h:20)
+2025-10-24 20:13:10,255 [WARNING] Connection using udp:// is deprecated, please use udpin:// or udpout:// (cli_arg.cpp:28)
+2025-10-24 20:13:10,256 [INFO] New system on: 127.0.0.1:14580 (with system ID: 1) (udp_connection.cpp:263)
+2025-10-24 20:13:11,110 [WARNING] Vehicle type changed (new type: 2, old type: 0) (system_impl.cpp:323)
+2025-10-24 20:13:11,111 [INFO] System discovered (connection_initiator.h:62)
+2025-10-24 20:13:11,131 [INFO] Server started (grpc_server.cpp:177)
+2025-10-24 20:13:11,131 [INFO] Server set to listen on 0.0.0.0:50051 (grpc_server.cpp:178)
+2025-10-24 20:13:11,407 [INFO] System connected.
+2025-10-24 20:13:11,407 [INFO] --- Follower ready. Entering Sentry Mode. ---
+2025-10-24 20:13:11,408 [INFO] Fly the Leader. Switch this drone to OFFBOARD to begin following.
+2025-10-24 20:13:11,408 [INFO] Starting UDP listener on port 5005
+2025-10-24 20:27:00,054 [INFO] heartbeats timed out (system_impl.cpp:370)
+2025-10-24 20:49:00,811 [INFO] Script interrupted by user.
+2025-10-24 20:49:00,811 [INFO] Entering final safety cleanup...
+2025-10-24 20:49:00,813 [ERROR] unhandled exception during asyncio.run() shutdown
+task: <Task finished name='Task-1' coro=<Follower.run() done, defined at /home/mh/Shahin/drone_swarm/leader_follower/follower.py:128> exception=<AioRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:50051: Failed to connect to remote host: connect: Connection refused (111)"
+	debug_error_string = "UNKNOWN:Error received from peer  {grpc_status:14, grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:50051: Failed to connect to remote host: connect: Connection refused (111)"}"
+>>
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/asyncio/runners.py", line 44, in run
+    return loop.run_until_complete(main)
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 636, in run_until_complete
+    self.run_forever()
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 603, in run_forever
+    self._run_once()
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 1871, in _run_once
+    event_list = self._selector.select(timeout)
+  File "/usr/lib/python3.10/selectors.py", line 469, in select
+    fd_event_list = self._selector.poll(timeout, max_ev)
+KeyboardInterrupt
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mh/Shahin/drone_swarm/leader_follower/follower.py", line 157, in run
+    is_in_air = await self.drone.telemetry.in_air().__anext__()
+  File "/home/mh/.local/lib/python3.10/site-packages/mavsdk/telemetry.py", line 3309, in in_air
+    async for response in in_air_stream:
+grpc.aio._call.AioRpcError: <AioRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:50051: Failed to connect to remote host: connect: Connection refused (111)"
+	debug_error_string = "UNKNOWN:Error received from peer  {grpc_status:14, grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:50051: Failed to connect to remote host: connect: Connection refused (111)"}"
+>
