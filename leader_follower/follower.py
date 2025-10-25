@@ -24,7 +24,9 @@ from mavsdk.telemetry import Position
 
 # --- Configuration ---
 LOG_FILE = "follower.log"
-CONNECTION_STRING = "udp://:14542"
+# For SITL with sitl_multiple_run.sh, use "udp://:14543"
+# For real hardware, use your serial port, e.g., "serial:///dev/ttyAMA0:921600"
+CONNECTION_STRING = "serial:///dev/ttyACM0:921600"
 LISTENING_PORT = 5005
 
 # Flight Behavior
@@ -59,7 +61,7 @@ class Follower:
         self.my_battery = None
 
     async def _connect_and_prepare(self):
-        self.log.info("Connecting to system...")
+        self.log.info(f"Connecting to flight controller at {CONNECTION_STRING}...")
         await self.drone.connect(system_address=CONNECTION_STRING)
         async for state in self.drone.core.connection_state():
             if state.is_connected: self.log.info("System connected."); break
@@ -154,10 +156,13 @@ class Follower:
             self.log.info("Script interrupted by user.")
         finally:
             self.log.info("Entering final safety cleanup...")
-            is_in_air = await self.drone.telemetry.in_air().__anext__()
-            if is_in_air:
-                self.log.warning("Drone is still in the air! Commanding HOLD immediately.")
-                await self.drone.action.hold()
+            try:
+                is_in_air = await self.drone.telemetry.in_air().__anext__()
+                if is_in_air:
+                    self.log.warning("Drone is still in the air! Commanding HOLD immediately.")
+                    await self.drone.action.hold()
+            except Exception as e:
+                self.log.error(f"Error during final cleanup: {e}")
             self.log.info("Cleanup complete. Script terminating.")
 
     async def execute_offboard_logic(self):
@@ -169,22 +174,25 @@ class Follower:
         if leader_in_air and leader_alt > TAKEOFF_TRIGGER_ALT_M and not am_i_in_air:
             await self.drone.action.arm()
             if await self.controlled_takeoff(leader_alt):
-                await self.transition_to_formation_loop()
-                await self.follow_loop()
+                if await self.transition_to_formation_loop():
+                    await self.follow_loop()
         elif leader_in_air and am_i_in_air:
-            await self.transition_to_formation_loop()
-            await self.follow_loop()
+            if await self.transition_to_formation_loop():
+                await self.follow_loop()
         elif am_i_in_air and not leader_in_air:
             if await self.smart_land():
                 await asyncio.sleep(1)
                 await self.drone.action.disarm()
-        else:
+        else: # Both on ground
             await asyncio.sleep(1)
 
     async def transition_to_formation_loop(self):
         """Elevated Highway Maneuver for safe entry."""
         self.log.info("Executing safe transition to formation...")
         while str(await self.drone.telemetry.flight_mode().__anext__()) == "OFFBOARD":
+            if "relative_altitude_m" not in self.leader_data:
+                self.log.warning("Waiting for leader data to start transition..."); await asyncio.sleep(0.5); continue
+            
             leader_pos, current_pos = self.leader_data, await self.drone.telemetry.position().__anext__()
             
             # Phase 1: Climb to safe altitude
@@ -192,8 +200,7 @@ class Follower:
             altitude_error = safe_altitude - current_pos.relative_altitude_m
             if abs(altitude_error) > POSITION_TOLERANCE:
                 velocity_z = - (altitude_error * ALTITUDE_P_GAIN)
-                await self.drone.offboard.set_velocity_ned(VelocityNedYaw(0.0, 0.0, velocity_z, 0.0))
-                await asyncio.sleep(0.1); continue
+                await self.drone.offboard.set_velocity_ned(VelocityNedYaw(0.0, 0.0, velocity_z, 0.0)); await asyncio.sleep(0.1); continue
 
             # Phase 2: Reposition horizontally
             lat_offset_m = OFFSET_NORTH_M / 111320.0
@@ -205,17 +212,16 @@ class Follower:
             if distance_remaining > POSITION_TOLERANCE:
                 velocity_n, velocity_e = remaining_north * FLIGHT_SPEED, remaining_east * FLIGHT_SPEED
                 velocity_z = - (altitude_error * ALTITUDE_P_GAIN) # Maintain safe altitude
-                await self.drone.offboard.set_velocity_ned(VelocityNedYaw(velocity_n, velocity_e, velocity_z, 0.0))
-                await asyncio.sleep(0.1); continue
+                await self.drone.offboard.set_velocity_ned(VelocityNedYaw(velocity_n, velocity_e, velocity_z, 0.0)); await asyncio.sleep(0.1); continue
 
             # Phase 3: Descend into formation
             final_altitude_error = leader_pos["relative_altitude_m"] - current_pos.relative_altitude_m
             if abs(final_altitude_error) > POSITION_TOLERANCE:
                 velocity_z = - (final_altitude_error * ALTITUDE_P_GAIN)
-                await self.drone.offboard.set_velocity_ned(VelocityNedYaw(0.0, 0.0, velocity_z, 0.0))
-                await asyncio.sleep(0.1); continue
+                await self.drone.offboard.set_velocity_ned(VelocityNedYaw(0.0, 0.0, velocity_z, 0.0)); await asyncio.sleep(0.1); continue
 
-            self.log.info("Transition to formation complete."); return
+            self.log.info("Transition to formation complete."); return True
+        return False
 
     async def follow_loop(self):
         """The core loop for following the leader."""
@@ -238,21 +244,24 @@ class Follower:
 
             current_pos = await self.drone.telemetry.position().__anext__()
             if self.calculate_distance_to_leader(current_pos) < MINIMUM_SAFE_DISTANCE:
-                self.log.warning("Safety bubble breached! Evasive maneuver.");
+                self.log.warning(f"Safety bubble breached! Evasive maneuver.");
                 vec_n = (current_pos.latitude_deg - self.leader_data["latitude_deg"]) * 111320.0
                 vec_e = (current_pos.longitude_deg - self.leader_data["longitude_deg"]) * 111320.0 * math.cos(math.radians(current_pos.latitude_deg))
-                await self.drone.offboard.set_velocity_ned(VelocityNedYaw(vec_n, vec_e, -0.5)); await asyncio.sleep(0.1); continue
+                await self.drone.offboard.set_velocity_ned(VelocityNedYaw(vec_n/2, vec_e/2, -0.5)); await asyncio.sleep(0.1); continue
 
             # --- Core Following Logic ---
             leader_lat, leader_lon = self.leader_data["latitude_deg"], self.leader_data["longitude_deg"]
             lat_offset_m = OFFSET_NORTH_M / 111320.0
             lon_offset_m = OFFSET_EAST_M / (111320.0 * math.cos(math.radians(leader_lat)))
             target_lat, target_lon = leader_lat + lat_offset_m, leader_lon + lon_offset_m
+            
             remaining_north = (target_lat - current_pos.latitude_deg) * 111320.0
             remaining_east = (target_lon - current_pos.longitude_deg) * 111320.0 * math.cos(math.radians(current_pos.latitude_deg))
-            velocity_n, velocity_e = remaining_north * FLIGHT_SPEED, remaining_east * FLIGHT_SPEED
+            
+            velocity_n, velocity_e = remaining_north * (FLIGHT_SPEED / 2), remaining_east * (FLIGHT_SPEED / 2) # Smoother follow
             altitude_error = leader_alt - current_pos.relative_altitude_m
             velocity_z = - (altitude_error * ALTITUDE_P_GAIN)
+            
             await self.drone.offboard.set_velocity_ned(VelocityNedYaw(velocity_n, velocity_e, velocity_z, 0.0))
             await asyncio.sleep(0.1)
         

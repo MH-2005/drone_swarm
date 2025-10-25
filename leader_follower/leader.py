@@ -17,9 +17,12 @@ from mavsdk import System
 
 # --- Configuration ---
 LOG_FILE = "leader.log"
-CONNECTION_STRING = "udp://:14541"
-# Ensure this is the static IP of your Follower drone's Orange Pi
-FOLLOWER_IP = "192.168.1.2"
+# For SITL with sitl_multiple_run.sh, use "udp://:14542"
+# For real hardware, use your serial port, e.g., "serial:///dev/ttyAMA0:921600"
+CONNECTION_STRING = "serial:///dev/ttyACM0:921600"
+
+# For SITL, use "127.0.0.1". For real hardware, use the Follower's static IP.
+FOLLOWER_IP = "192.168.1.113"
 BROADCAST_PORT = 5005
 BROADCAST_RATE_HZ = 20  # 20 Hz is a good rate for smooth following
 
@@ -39,19 +42,25 @@ class Leader:
         self.telemetry_data = {}
 
     async def run(self):
-        """Main loop to connect and broadcast telemetry."""
-        self.log.info("Connecting to flight controller...")
+        """Main loop to connect, wait for data, and then broadcast."""
+        self.log.info(f"Connecting to flight controller at {CONNECTION_STRING}...")
         await self.drone.connect(system_address=CONNECTION_STRING)
         async for state in self.drone.core.connection_state():
             if state.is_connected:
                 self.log.info("Flight controller connected.")
                 break
 
-        self.log.info("Starting telemetry broadcast tasks...")
+        self.log.info("Starting background telemetry tasks...")
         
         asyncio.create_task(self._update_position())
         asyncio.create_task(self._update_in_air_status())
         asyncio.create_task(self._update_gps_info())
+        
+        self.log.info("Waiting for the first GPS position fix...")
+        while 'latitude_deg' not in self.telemetry_data:
+            await asyncio.sleep(0.5)
+        self.log.info("GPS fix acquired! Starting main broadcast loop.")
+        self.log.info(f"Broadcasting to {self.target_address[0]}:{self.target_address[1]}")
 
         while True:
             self.send_data(self.telemetry_data)
@@ -74,7 +83,7 @@ class Leader:
             self.telemetry_data['num_satellites'] = gps_info.num_satellites
 
     def send_data(self, data_dict):
-        if not data_dict:
+        if 'latitude_deg' not in data_dict:
             return
         try:
             message = json.dumps(data_dict).encode('utf-8')
