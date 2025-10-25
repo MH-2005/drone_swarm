@@ -1,0 +1,15 @@
+2025-10-25 20:10:50,718 [INFO] Connecting to system at udp://:14540...
+2025-10-25 20:10:50,735 [INFO] MAVSDK version: v3.10.2 (mavsdk_impl.cpp:32)
+2025-10-25 20:10:50,756 [INFO] Waiting to discover system on udp://:14540... (connection_initiator.h:20)
+2025-10-25 20:10:50,756 [WARNING] Connection using udp:// is deprecated, please use udpin:// or udpout:// (cli_arg.cpp:28)
+2025-10-25 20:10:50,763 [INFO] New system on: 127.0.0.1:14580 (with system ID: 1) (udp_connection.cpp:263)
+2025-10-25 20:10:51,233 [WARNING] Vehicle type changed (new type: 2, old type: 0) (system_impl.cpp:323)
+2025-10-25 20:10:51,234 [INFO] System discovered (connection_initiator.h:62)
+2025-10-25 20:10:51,242 [INFO] Server started (grpc_server.cpp:177)
+2025-10-25 20:10:51,243 [INFO] Server set to listen on 0.0.0.0:50051 (grpc_server.cpp:178)
+2025-10-25 20:10:51,575 [INFO] System connected.
+2025-10-25 20:10:51,575 [INFO] Performing pre-flight health checks...
+2025-10-25 20:10:52,251 [INFO] Pre-flight checks passed.
+2025-10-25 20:10:52,252 [INFO] --- System ready. Entering Sentry Mode. ---
+2025-10-25 20:10:52,252 [INFO] Pilot can arm and fly manually. Switch to OFFBOARD to trigger the mission.
+2025-10-25 20:11:51,311 [INFO] Sentry mode interrupted by user. Shutting down.

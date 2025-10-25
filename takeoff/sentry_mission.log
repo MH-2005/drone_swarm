@@ -13,3 +13,1445 @@
 2025-10-23 19:45:50,349 [INFO] --- System ready. Entering Sentry Mode. ---
 2025-10-23 19:45:50,349 [INFO] Pilot can arm and fly manually. Switch to OFFBOARD to trigger the mission.
 2025-10-23 19:46:15,018 [INFO] Sentry mode interrupted by user. Shutting down.
+2025-10-25 20:13:40,882 [INFO] Connecting to system at udp://:14540...
+2025-10-25 20:13:40,909 [INFO] System connected.
+2025-10-25 20:13:40,909 [INFO] Performing pre-flight health checks...
+2025-10-25 20:13:40,911 [INFO] MAVSDK version: v3.10.2 (mavsdk_impl.cpp:32)
+2025-10-25 20:13:40,926 [INFO] Waiting to discover system on udp://:14540... (connection_initiator.h:20)
+2025-10-25 20:13:40,926 [WARNING] Connection using udp:// is deprecated, please use udpin:// or udpout:// (cli_arg.cpp:28)
+2025-10-25 20:13:40,926 [ERROR] bind error: Address in use (udp_connection.cpp:99)
+2025-10-25 20:13:40,926 [ERROR] Connection failed: Bind error (connection_initiator.h:47)
+2025-10-25 20:13:41,081 [INFO] Pre-flight checks passed.
+2025-10-25 20:13:41,082 [INFO] --- System ready. Entering Sentry Mode. ---
+2025-10-25 20:13:41,082 [INFO] Pilot can arm and fly manually. Switch to OFFBOARD to trigger the mission.
+2025-10-25 20:13:43,126 [INFO] --- OFFBOARD TRIGGERED: EXECUTING SQUARE MISSION ---
+2025-10-25 20:13:43,127 [INFO] Arming system...
+2025-10-25 20:13:44,152 [INFO] Executing controlled takeoff to 3.0m...
+2025-10-25 20:13:45,178 [INFO] Ascending... Altitude: -0.01m, Speed: 1.00m/s
+2025-10-25 20:13:46,198 [INFO] Ascending... Altitude: 0.02m, Speed: 1.00m/s
+2025-10-25 20:13:47,217 [INFO] Ascending... Altitude: 0.44m, Speed: 1.00m/s
+2025-10-25 20:13:48,245 [INFO] Ascending... Altitude: 1.06m, Speed: 0.81m/s
+2025-10-25 20:13:49,266 [INFO] Ascending... Altitude: 1.66m, Speed: 0.56m/s
+2025-10-25 20:13:50,298 [INFO] Ascending... Altitude: 2.11m, Speed: 0.37m/s
+2025-10-25 20:13:51,323 [INFO] Ascending... Altitude: 2.41m, Speed: 0.25m/s
+2025-10-25 20:13:52,330 [INFO] Ascending... Altitude: 2.60m, Speed: 0.20m/s
+2025-10-25 20:13:53,333 [INFO] Target altitude reached.
+2025-10-25 20:13:53,334 [INFO] Capturing home position and calculating square corners...
+2025-10-25 20:13:53,354 [INFO] Square corners calculated relative to Home (P0): Lat=47.39798, Lon=8.54616
+2025-10-25 20:13:53,354 [INFO] --- Flying to Corner 1 (Forward) ---
+2025-10-25 20:13:53,354 [INFO] Moving to absolute target: Lat=47.39802, Lon=8.54616
+2025-10-25 20:13:53,374 [INFO] Altitude lock engaged. Target altitude: 2.80m
+2025-10-25 20:13:54,342 [INFO] Moving... Rem: 5.09m, AltError: 0.02m, Vz_correct: -0.05m/s
+2025-10-25 20:13:55,347 [INFO] Moving... Rem: 4.70m, AltError: 0.00m, Vz_correct: -0.01m/s
+2025-10-25 20:13:56,353 [INFO] Moving... Rem: 3.76m, AltError: -0.01m, Vz_correct: 0.02m/s
+2025-10-25 20:13:57,360 [INFO] Moving... Rem: 2.82m, AltError: 0.00m, Vz_correct: -0.00m/s
+2025-10-25 20:13:58,365 [INFO] Moving... Rem: 1.85m, AltError: -0.00m, Vz_correct: 0.01m/s
+2025-10-25 20:13:59,373 [INFO] Moving... Rem: 0.88m, AltError: 0.01m, Vz_correct: -0.03m/s
+2025-10-25 20:14:00,378 [INFO] Absolute target position reached.
+2025-10-25 20:14:00,379 [INFO] Arrived at Corner 1 (Forward). Hovering for 2 seconds.
+2025-10-25 20:14:02,380 [INFO] --- Flying to Corner 2 (Right) ---
+2025-10-25 20:14:02,380 [INFO] Moving to absolute target: Lat=47.39802, Lon=8.54623
+2025-10-25 20:14:02,390 [INFO] Altitude lock engaged. Target altitude: 2.83m
+2025-10-25 20:14:03,396 [INFO] Moving... Rem: 4.81m, AltError: 0.01m, Vz_correct: -0.01m/s
+2025-10-25 20:14:04,402 [INFO] Moving... Rem: 4.34m, AltError: -0.00m, Vz_correct: 0.01m/s
+2025-10-25 20:14:05,409 [INFO] Moving... Rem: 3.31m, AltError: 0.01m, Vz_correct: -0.03m/s
+2025-10-25 20:14:06,415 [INFO] Moving... Rem: 2.31m, AltError: 0.02m, Vz_correct: -0.04m/s
+2025-10-25 20:14:07,421 [INFO] Moving... Rem: 1.29m, AltError: -0.01m, Vz_correct: 0.02m/s
+2025-10-25 20:14:08,427 [INFO] Moving... Rem: 0.42m, AltError: -0.01m, Vz_correct: 0.01m/s
+2025-10-25 20:14:09,433 [INFO] Absolute target position reached.
+2025-10-25 20:14:09,434 [INFO] Arrived at Corner 2 (Right). Hovering for 2 seconds.
+2025-10-25 20:14:11,436 [INFO] --- Flying to Corner 3 (Back) ---
+2025-10-25 20:14:11,436 [INFO] Moving to absolute target: Lat=47.39798, Lon=8.54623
+2025-10-25 20:14:11,447 [INFO] Altitude lock engaged. Target altitude: 2.81m
+2025-10-25 20:14:11,469 [INFO] Moving... Rem: 4.90m, AltError: 0.00m, Vz_correct: -0.00m/s
+2025-10-25 20:14:12,512 [INFO] Moving... Rem: 4.42m, AltError: -0.01m, Vz_correct: 0.03m/s
+2025-10-25 20:14:13,534 [INFO] Moving... Rem: 3.38m, AltError: 0.03m, Vz_correct: -0.06m/s
+2025-10-25 20:14:14,551 [INFO] Moving... Rem: 2.32m, AltError: -0.02m, Vz_correct: 0.04m/s
+2025-10-25 20:14:15,570 [INFO] Moving... Rem: 1.28m, AltError: 0.01m, Vz_correct: -0.03m/s
+2025-10-25 20:14:16,588 [INFO] Moving... Rem: 0.40m, AltError: -0.01m, Vz_correct: 0.01m/s
+2025-10-25 20:14:17,605 [INFO] Absolute target position reached.
+2025-10-25 20:14:17,606 [INFO] Arrived at Corner 3 (Back). Hovering for 2 seconds.
+2025-10-25 20:14:19,608 [INFO] --- Flying to Home (P0) ---
+2025-10-25 20:14:19,609 [INFO] Moving to absolute target: Lat=47.39798, Lon=8.54616
+2025-10-25 20:14:19,623 [INFO] Altitude lock engaged. Target altitude: 2.82m
+2025-10-25 20:14:19,646 [INFO] Moving... Rem: 5.02m, AltError: 0.00m, Vz_correct: -0.00m/s
+2025-10-25 20:14:20,664 [INFO] Moving... Rem: 4.55m, AltError: 0.00m, Vz_correct: -0.00m/s
+2025-10-25 20:14:21,683 [INFO] Moving... Rem: 3.54m, AltError: 0.00m, Vz_correct: -0.00m/s
+2025-10-25 20:14:22,705 [INFO] Moving... Rem: 2.52m, AltError: -0.01m, Vz_correct: 0.02m/s
+2025-10-25 20:14:23,723 [INFO] Moving... Rem: 1.49m, AltError: 0.00m, Vz_correct: -0.00m/s
+2025-10-25 20:14:24,740 [INFO] Moving... Rem: 0.59m, AltError: -0.01m, Vz_correct: 0.03m/s
+2025-10-25 20:14:25,756 [INFO] Absolute target position reached.
+2025-10-25 20:14:25,757 [INFO] Arrived at Home (P0). Hovering for 2 seconds.
+2025-10-25 20:14:27,759 [INFO] Executing smart landing...
+2025-10-25 20:14:28,808 [INFO] Descending... Alt: 2.82m, Telemetry: False, Logic: False
+2025-10-25 20:14:30,849 [INFO] Descending... Alt: 1.46m, Telemetry: False, Logic: False
+2025-10-25 20:14:32,888 [INFO] Descending... Alt: 1.03m, Telemetry: False, Logic: False
+2025-10-25 20:14:34,926 [INFO] Descending... Alt: 0.63m, Telemetry: False, Logic: False
+2025-10-25 20:14:36,962 [INFO] Descending... Alt: 0.23m, Telemetry: False, Logic: False
+2025-10-25 20:14:39,004 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: False
+2025-10-25 20:14:41,043 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: False
+2025-10-25 20:14:43,080 [INFO] Descending... Alt: -0.02m, Telemetry: False, Logic: True
+2025-10-25 20:14:45,120 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:14:47,158 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:14:49,196 [INFO] Descending... Alt: 0.02m, Telemetry: False, Logic: True
+2025-10-25 20:14:51,232 [INFO] Descending... Alt: 0.03m, Telemetry: False, Logic: True
+2025-10-25 20:14:53,273 [INFO] Descending... Alt: 0.04m, Telemetry: False, Logic: True
+2025-10-25 20:14:55,314 [INFO] Descending... Alt: 0.02m, Telemetry: False, Logic: True
+2025-10-25 20:14:57,350 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:14:59,389 [INFO] Descending... Alt: -0.02m, Telemetry: False, Logic: True
+2025-10-25 20:15:01,427 [INFO] Descending... Alt: 0.02m, Telemetry: False, Logic: True
+2025-10-25 20:15:03,465 [INFO] Descending... Alt: 0.02m, Telemetry: False, Logic: True
+2025-10-25 20:15:05,509 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:15:07,545 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:15:09,583 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:15:11,622 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:15:13,662 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:15:15,698 [INFO] Descending... Alt: -0.02m, Telemetry: False, Logic: True
+2025-10-25 20:15:17,740 [INFO] Descending... Alt: -0.03m, Telemetry: False, Logic: True
+2025-10-25 20:15:19,778 [INFO] Descending... Alt: -0.00m, Telemetry: False, Logic: True
+2025-10-25 20:15:21,821 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:15:23,871 [INFO] Descending... Alt: 0.02m, Telemetry: False, Logic: True
+2025-10-25 20:15:25,915 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:15:27,963 [INFO] Descending... Alt: 0.03m, Telemetry: False, Logic: True
+2025-10-25 20:15:30,007 [INFO] Descending... Alt: 0.05m, Telemetry: False, Logic: True
+2025-10-25 20:15:32,049 [INFO] Descending... Alt: 0.05m, Telemetry: False, Logic: True
+2025-10-25 20:15:34,094 [INFO] Descending... Alt: 0.05m, Telemetry: False, Logic: True
+2025-10-25 20:15:36,146 [INFO] Descending... Alt: 0.05m, Telemetry: False, Logic: True
+2025-10-25 20:15:38,194 [INFO] Descending... Alt: 0.03m, Telemetry: False, Logic: True
+2025-10-25 20:15:40,240 [INFO] Descending... Alt: 0.02m, Telemetry: False, Logic: True
+2025-10-25 20:15:42,286 [INFO] Descending... Alt: 0.02m, Telemetry: False, Logic: True
+2025-10-25 20:15:44,336 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:15:45,198 [INFO] Sentry mode interrupted by user. Shutting down.
+2025-10-25 20:15:48,617 [INFO] Connecting to system at udp://:14540...
+2025-10-25 20:15:48,654 [INFO] MAVSDK version: v3.10.2 (mavsdk_impl.cpp:32)
+2025-10-25 20:15:48,655 [INFO] System connected.
+2025-10-25 20:15:48,655 [INFO] Performing pre-flight health checks...
+2025-10-25 20:15:48,682 [INFO] Waiting to discover system on udp://:14540... (connection_initiator.h:20)
+2025-10-25 20:15:48,683 [WARNING] Connection using udp:// is deprecated, please use udpin:// or udpout:// (cli_arg.cpp:28)
+2025-10-25 20:15:48,683 [ERROR] bind error: Address in use (udp_connection.cpp:99)
+2025-10-25 20:15:48,683 [ERROR] Connection failed: Bind error (connection_initiator.h:47)
+2025-10-25 20:15:49,438 [INFO] Pre-flight checks passed.
+2025-10-25 20:15:49,439 [INFO] --- System ready. Entering Sentry Mode. ---
+2025-10-25 20:15:49,439 [INFO] Pilot can arm and fly manually. Switch to OFFBOARD to trigger the mission.
+2025-10-25 20:15:51,494 [INFO] --- OFFBOARD TRIGGERED: EXECUTING SQUARE MISSION ---
+2025-10-25 20:15:51,495 [INFO] Arming system...
+2025-10-25 20:15:52,524 [INFO] Executing controlled takeoff to 3.0m...
+2025-10-25 20:15:53,536 [INFO] Ascending... Altitude: 0.02m, Speed: 1.00m/s
+2025-10-25 20:15:54,555 [INFO] Ascending... Altitude: 0.01m, Speed: 1.00m/s
+2025-10-25 20:15:55,573 [INFO] Ascending... Altitude: 0.02m, Speed: 1.00m/s
+2025-10-25 20:15:56,594 [INFO] Ascending... Altitude: 0.21m, Speed: 1.00m/s
+2025-10-25 20:15:57,616 [INFO] Ascending... Altitude: 0.72m, Speed: 0.95m/s
+2025-10-25 20:15:58,634 [INFO] Ascending... Altitude: 1.39m, Speed: 0.67m/s
+2025-10-25 20:15:59,654 [INFO] Ascending... Altitude: 1.92m, Speed: 0.45m/s
+2025-10-25 20:16:00,675 [INFO] Ascending... Altitude: 2.28m, Speed: 0.30m/s
+2025-10-25 20:16:01,696 [INFO] Ascending... Altitude: 2.53m, Speed: 0.20m/s
+2025-10-25 20:16:02,715 [INFO] Ascending... Altitude: 2.69m, Speed: 0.20m/s
+2025-10-25 20:16:03,733 [INFO] Target altitude reached.
+2025-10-25 20:16:03,736 [INFO] Capturing home position and calculating square corners...
+2025-10-25 20:16:03,753 [INFO] Square corners calculated relative to Home (P0): Lat=47.39798, Lon=8.54616
+2025-10-25 20:16:03,754 [INFO] --- Flying to Corner 1 (Forward) ---
+2025-10-25 20:16:03,754 [INFO] Moving to absolute target: Lat=47.39802, Lon=8.54616
+2025-10-25 20:16:03,774 [INFO] Altitude lock engaged. Target altitude: 2.86m
+2025-10-25 20:16:04,757 [INFO] Moving... Rem: 4.97m, AltError: 0.01m, Vz_correct: -0.03m/s
+2025-10-25 20:16:05,777 [INFO] Moving... Rem: 4.51m, AltError: 0.01m, Vz_correct: -0.02m/s
+2025-10-25 20:16:06,796 [INFO] Moving... Rem: 3.54m, AltError: -0.00m, Vz_correct: 0.01m/s
+2025-10-25 20:16:07,814 [INFO] Moving... Rem: 2.52m, AltError: 0.00m, Vz_correct: -0.00m/s
+2025-10-25 20:16:08,833 [INFO] Moving... Rem: 1.48m, AltError: 0.01m, Vz_correct: -0.01m/s
+2025-10-25 20:16:09,854 [INFO] Moving... Rem: 0.56m, AltError: -0.02m, Vz_correct: 0.03m/s
+2025-10-25 20:16:10,870 [INFO] Absolute target position reached.
+2025-10-25 20:16:10,872 [INFO] Arrived at Corner 1 (Forward). Hovering for 2 seconds.
+2025-10-25 20:16:12,875 [INFO] --- Flying to Corner 2 (Right) ---
+2025-10-25 20:16:12,876 [INFO] Moving to absolute target: Lat=47.39802, Lon=8.54623
+2025-10-25 20:16:12,888 [INFO] Altitude lock engaged. Target altitude: 2.87m
+2025-10-25 20:16:12,908 [INFO] Moving... Rem: 5.11m, AltError: 0.00m, Vz_correct: -0.00m/s
+2025-10-25 20:16:13,931 [INFO] Moving... Rem: 4.66m, AltError: -0.02m, Vz_correct: 0.04m/s
+2025-10-25 20:16:14,951 [INFO] Moving... Rem: 3.65m, AltError: 0.02m, Vz_correct: -0.04m/s
+2025-10-25 20:16:15,968 [INFO] Moving... Rem: 2.64m, AltError: -0.02m, Vz_correct: 0.03m/s
+2025-10-25 20:16:16,990 [INFO] Moving... Rem: 1.62m, AltError: 0.02m, Vz_correct: -0.04m/s
+2025-10-25 20:16:18,009 [INFO] Moving... Rem: 0.67m, AltError: 0.00m, Vz_correct: -0.00m/s
+2025-10-25 20:16:19,026 [INFO] Absolute target position reached.
+2025-10-25 20:16:19,029 [INFO] Arrived at Corner 2 (Right). Hovering for 2 seconds.
+2025-10-25 20:16:21,032 [INFO] --- Flying to Corner 3 (Back) ---
+2025-10-25 20:16:21,032 [INFO] Moving to absolute target: Lat=47.39798, Lon=8.54623
+2025-10-25 20:16:21,044 [INFO] Altitude lock engaged. Target altitude: 2.91m
+2025-10-25 20:16:21,067 [INFO] Moving... Rem: 4.97m, AltError: 0.00m, Vz_correct: -0.00m/s
+2025-10-25 20:16:22,083 [INFO] Moving... Rem: 4.49m, AltError: -0.02m, Vz_correct: 0.04m/s
+2025-10-25 20:16:23,102 [INFO] Moving... Rem: 3.48m, AltError: 0.03m, Vz_correct: -0.06m/s
+2025-10-25 20:16:24,120 [INFO] Moving... Rem: 2.46m, AltError: -0.01m, Vz_correct: 0.03m/s
+2025-10-25 20:16:25,142 [INFO] Moving... Rem: 1.45m, AltError: 0.02m, Vz_correct: -0.05m/s
+2025-10-25 20:16:26,159 [INFO] Moving... Rem: 0.53m, AltError: -0.02m, Vz_correct: 0.05m/s
+2025-10-25 20:16:27,179 [INFO] Absolute target position reached.
+2025-10-25 20:16:27,182 [INFO] Arrived at Corner 3 (Back). Hovering for 2 seconds.
+2025-10-25 20:16:29,184 [INFO] --- Flying to Home (P0) ---
+2025-10-25 20:16:29,185 [INFO] Moving to absolute target: Lat=47.39798, Lon=8.54616
+2025-10-25 20:16:29,194 [INFO] Altitude lock engaged. Target altitude: 2.90m
+2025-10-25 20:16:29,216 [INFO] Moving... Rem: 4.96m, AltError: 0.00m, Vz_correct: -0.00m/s
+2025-10-25 20:16:30,233 [INFO] Moving... Rem: 4.50m, AltError: -0.02m, Vz_correct: 0.03m/s
+2025-10-25 20:16:31,250 [INFO] Moving... Rem: 3.50m, AltError: 0.03m, Vz_correct: -0.06m/s
+2025-10-25 20:16:32,268 [INFO] Moving... Rem: 2.47m, AltError: -0.03m, Vz_correct: 0.07m/s
+2025-10-25 20:16:33,295 [INFO] Moving... Rem: 1.45m, AltError: 0.03m, Vz_correct: -0.06m/s
+2025-10-25 20:16:34,300 [INFO] Moving... Rem: 0.56m, AltError: -0.03m, Vz_correct: 0.06m/s
+2025-10-25 20:16:35,305 [INFO] Absolute target position reached.
+2025-10-25 20:16:35,307 [INFO] Arrived at Home (P0). Hovering for 2 seconds.
+2025-10-25 20:16:37,309 [INFO] Executing smart landing...
+2025-10-25 20:16:39,322 [INFO] Descending... Alt: 2.82m, Telemetry: False, Logic: False
+2025-10-25 20:16:41,335 [INFO] Descending... Alt: 1.49m, Telemetry: False, Logic: False
+2025-10-25 20:16:43,353 [INFO] Descending... Alt: 1.06m, Telemetry: False, Logic: False
+2025-10-25 20:16:45,381 [INFO] Descending... Alt: 0.67m, Telemetry: False, Logic: False
+2025-10-25 20:16:47,393 [INFO] Descending... Alt: 0.25m, Telemetry: False, Logic: False
+2025-10-25 20:16:49,447 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: False
+2025-10-25 20:16:51,493 [INFO] Descending... Alt: 0.03m, Telemetry: False, Logic: False
+2025-10-25 20:16:53,549 [INFO] Descending... Alt: 0.02m, Telemetry: False, Logic: True
+2025-10-25 20:16:55,597 [INFO] Descending... Alt: 0.02m, Telemetry: False, Logic: True
+2025-10-25 20:16:57,615 [INFO] Descending... Alt: 0.03m, Telemetry: False, Logic: True
+2025-10-25 20:16:59,645 [INFO] Descending... Alt: 0.04m, Telemetry: False, Logic: True
+2025-10-25 20:17:01,680 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:17:03,718 [INFO] Descending... Alt: 0.03m, Telemetry: False, Logic: True
+2025-10-25 20:17:05,752 [INFO] Descending... Alt: 0.02m, Telemetry: False, Logic: True
+2025-10-25 20:17:07,822 [INFO] Descending... Alt: 0.02m, Telemetry: False, Logic: True
+2025-10-25 20:17:09,858 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:17:11,883 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:17:13,919 [INFO] Descending... Alt: 0.03m, Telemetry: False, Logic: True
+2025-10-25 20:17:15,950 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:17:17,993 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:17:20,017 [INFO] Descending... Alt: -0.00m, Telemetry: False, Logic: True
+2025-10-25 20:17:22,051 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:17:24,100 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:17:26,131 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:17:28,144 [INFO] Descending... Alt: 0.02m, Telemetry: False, Logic: True
+2025-10-25 20:17:30,180 [INFO] Descending... Alt: 0.02m, Telemetry: False, Logic: True
+2025-10-25 20:17:32,198 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:17:34,220 [INFO] Descending... Alt: 0.02m, Telemetry: False, Logic: True
+2025-10-25 20:17:36,249 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:17:38,268 [INFO] Descending... Alt: -0.00m, Telemetry: False, Logic: True
+2025-10-25 20:17:40,293 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:17:42,318 [INFO] Descending... Alt: -0.02m, Telemetry: False, Logic: True
+2025-10-25 20:17:44,344 [INFO] Descending... Alt: -0.02m, Telemetry: False, Logic: True
+2025-10-25 20:17:46,374 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:17:48,407 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:17:50,439 [INFO] Descending... Alt: 0.02m, Telemetry: False, Logic: True
+2025-10-25 20:17:52,473 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:17:54,506 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:17:56,537 [INFO] Descending... Alt: 0.02m, Telemetry: False, Logic: True
+2025-10-25 20:17:58,570 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:18:00,603 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:18:02,634 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:18:04,668 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:18:06,700 [INFO] Descending... Alt: -0.00m, Telemetry: False, Logic: True
+2025-10-25 20:18:08,723 [INFO] Descending... Alt: 0.02m, Telemetry: False, Logic: True
+2025-10-25 20:18:10,744 [INFO] Descending... Alt: 0.02m, Telemetry: False, Logic: True
+2025-10-25 20:18:12,769 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:18:14,792 [INFO] Descending... Alt: -0.02m, Telemetry: False, Logic: True
+2025-10-25 20:18:16,819 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:18:18,855 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:18:20,888 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:18:22,921 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:18:24,954 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:18:26,987 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:18:29,022 [INFO] Descending... Alt: -0.00m, Telemetry: False, Logic: True
+2025-10-25 20:18:31,053 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:18:33,086 [INFO] Descending... Alt: -0.00m, Telemetry: False, Logic: True
+2025-10-25 20:18:35,120 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:18:37,153 [INFO] Descending... Alt: -0.02m, Telemetry: False, Logic: True
+2025-10-25 20:18:39,179 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:18:41,205 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:18:43,233 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:18:45,265 [INFO] Descending... Alt: 0.04m, Telemetry: False, Logic: True
+2025-10-25 20:18:47,293 [INFO] Descending... Alt: 0.02m, Telemetry: False, Logic: True
+2025-10-25 20:18:49,322 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:18:51,342 [INFO] Descending... Alt: -0.00m, Telemetry: False, Logic: True
+2025-10-25 20:18:53,375 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:18:55,407 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:18:57,434 [INFO] Descending... Alt: 0.03m, Telemetry: False, Logic: True
+2025-10-25 20:18:59,464 [INFO] Descending... Alt: 0.03m, Telemetry: False, Logic: True
+2025-10-25 20:19:01,484 [INFO] Descending... Alt: 0.02m, Telemetry: False, Logic: True
+2025-10-25 20:19:03,520 [INFO] Descending... Alt: 0.03m, Telemetry: False, Logic: True
+2025-10-25 20:19:05,554 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:19:07,587 [INFO] Descending... Alt: 0.02m, Telemetry: False, Logic: True
+2025-10-25 20:19:09,616 [INFO] Descending... Alt: 0.05m, Telemetry: False, Logic: True
+2025-10-25 20:19:11,642 [INFO] Descending... Alt: 0.07m, Telemetry: False, Logic: True
+2025-10-25 20:19:13,672 [INFO] Descending... Alt: 0.05m, Telemetry: False, Logic: True
+2025-10-25 20:19:15,704 [INFO] Descending... Alt: 0.05m, Telemetry: False, Logic: True
+2025-10-25 20:19:17,734 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:19:19,764 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:19:21,781 [INFO] Descending... Alt: -0.00m, Telemetry: False, Logic: True
+2025-10-25 20:19:23,813 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:19:25,844 [INFO] Descending... Alt: 0.02m, Telemetry: False, Logic: True
+2025-10-25 20:19:27,879 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:19:29,913 [INFO] Descending... Alt: 0.02m, Telemetry: False, Logic: True
+2025-10-25 20:19:31,939 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:19:33,960 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:19:35,979 [INFO] Descending... Alt: 0.02m, Telemetry: False, Logic: True
+2025-10-25 20:19:37,994 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:19:40,018 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:19:42,048 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:19:44,073 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:19:46,105 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:19:48,132 [INFO] Descending... Alt: 0.02m, Telemetry: False, Logic: True
+2025-10-25 20:19:50,165 [INFO] Descending... Alt: 0.04m, Telemetry: False, Logic: True
+2025-10-25 20:19:52,191 [INFO] Descending... Alt: 0.02m, Telemetry: False, Logic: True
+2025-10-25 20:19:54,222 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:19:56,255 [INFO] Descending... Alt: 0.02m, Telemetry: False, Logic: True
+2025-10-25 20:19:58,283 [INFO] Descending... Alt: 0.03m, Telemetry: False, Logic: True
+2025-10-25 20:20:00,313 [INFO] Descending... Alt: 0.03m, Telemetry: False, Logic: True
+2025-10-25 20:20:02,343 [INFO] Descending... Alt: 0.04m, Telemetry: False, Logic: True
+2025-10-25 20:20:04,377 [INFO] Descending... Alt: 0.03m, Telemetry: False, Logic: True
+2025-10-25 20:20:06,398 [INFO] Descending... Alt: -0.00m, Telemetry: False, Logic: True
+2025-10-25 20:20:08,424 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:20:10,454 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:20:12,485 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:20:14,519 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:20:16,552 [INFO] Descending... Alt: 0.02m, Telemetry: False, Logic: True
+2025-10-25 20:20:18,586 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:20:20,619 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:20:22,634 [INFO] Descending... Alt: 0.02m, Telemetry: False, Logic: True
+2025-10-25 20:20:24,653 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:20:26,669 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:20:28,687 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:20:30,705 [INFO] Descending... Alt: -0.03m, Telemetry: False, Logic: True
+2025-10-25 20:20:32,728 [INFO] Descending... Alt: -0.04m, Telemetry: False, Logic: True
+2025-10-25 20:20:34,762 [INFO] Descending... Alt: -0.03m, Telemetry: False, Logic: True
+2025-10-25 20:20:36,791 [INFO] Descending... Alt: -0.02m, Telemetry: False, Logic: True
+2025-10-25 20:20:38,808 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:20:40,843 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:20:42,866 [INFO] Descending... Alt: -0.00m, Telemetry: False, Logic: True
+2025-10-25 20:20:44,893 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:20:46,926 [INFO] Descending... Alt: 0.02m, Telemetry: False, Logic: True
+2025-10-25 20:20:48,945 [INFO] Descending... Alt: 0.02m, Telemetry: False, Logic: True
+2025-10-25 20:20:50,972 [INFO] Descending... Alt: 0.05m, Telemetry: False, Logic: True
+2025-10-25 20:20:52,990 [INFO] Descending... Alt: 0.05m, Telemetry: False, Logic: True
+2025-10-25 20:20:55,016 [INFO] Descending... Alt: 0.04m, Telemetry: False, Logic: True
+2025-10-25 20:20:57,046 [INFO] Descending... Alt: 0.04m, Telemetry: False, Logic: True
+2025-10-25 20:20:59,065 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:21:01,094 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:21:03,112 [INFO] Descending... Alt: 0.02m, Telemetry: False, Logic: True
+2025-10-25 20:21:05,127 [INFO] Descending... Alt: 0.04m, Telemetry: False, Logic: True
+2025-10-25 20:21:07,142 [INFO] Descending... Alt: 0.04m, Telemetry: False, Logic: True
+2025-10-25 20:21:09,157 [INFO] Descending... Alt: 0.02m, Telemetry: False, Logic: True
+2025-10-25 20:21:11,171 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:21:13,189 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:21:15,208 [INFO] Descending... Alt: 0.02m, Telemetry: False, Logic: True
+2025-10-25 20:21:17,226 [INFO] Descending... Alt: 0.02m, Telemetry: False, Logic: True
+2025-10-25 20:21:19,247 [INFO] Descending... Alt: 0.02m, Telemetry: False, Logic: True
+2025-10-25 20:21:21,265 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:21:23,284 [INFO] Descending... Alt: 0.02m, Telemetry: False, Logic: True
+2025-10-25 20:21:25,303 [INFO] Descending... Alt: 0.02m, Telemetry: False, Logic: True
+2025-10-25 20:21:27,322 [INFO] Descending... Alt: 0.02m, Telemetry: False, Logic: True
+2025-10-25 20:21:29,341 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:21:31,359 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:21:33,374 [INFO] Descending... Alt: 0.02m, Telemetry: False, Logic: True
+2025-10-25 20:21:35,391 [INFO] Descending... Alt: 0.02m, Telemetry: False, Logic: True
+2025-10-25 20:21:37,407 [INFO] Descending... Alt: 0.02m, Telemetry: False, Logic: True
+2025-10-25 20:21:39,425 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:21:41,449 [INFO] Descending... Alt: -0.02m, Telemetry: False, Logic: True
+2025-10-25 20:21:43,464 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:21:45,481 [INFO] Descending... Alt: 0.02m, Telemetry: False, Logic: True
+2025-10-25 20:21:47,509 [INFO] Descending... Alt: 0.05m, Telemetry: False, Logic: True
+2025-10-25 20:21:49,537 [INFO] Descending... Alt: 0.05m, Telemetry: False, Logic: True
+2025-10-25 20:21:51,559 [INFO] Descending... Alt: 0.03m, Telemetry: False, Logic: True
+2025-10-25 20:21:53,582 [INFO] Descending... Alt: 0.04m, Telemetry: False, Logic: True
+2025-10-25 20:21:55,607 [INFO] Descending... Alt: 0.04m, Telemetry: False, Logic: True
+2025-10-25 20:21:57,632 [INFO] Descending... Alt: 0.02m, Telemetry: False, Logic: True
+2025-10-25 20:21:59,647 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:22:01,663 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:22:03,681 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:22:05,695 [INFO] Descending... Alt: -0.00m, Telemetry: False, Logic: True
+2025-10-25 20:22:07,709 [INFO] Descending... Alt: -0.00m, Telemetry: False, Logic: True
+2025-10-25 20:22:09,727 [INFO] Descending... Alt: -0.00m, Telemetry: False, Logic: True
+2025-10-25 20:22:11,744 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:22:13,764 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:22:15,783 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:22:17,799 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:22:19,819 [INFO] Descending... Alt: -0.02m, Telemetry: False, Logic: True
+2025-10-25 20:22:21,841 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:22:23,860 [INFO] Descending... Alt: -0.00m, Telemetry: False, Logic: True
+2025-10-25 20:22:25,877 [INFO] Descending... Alt: -0.00m, Telemetry: False, Logic: True
+2025-10-25 20:22:27,895 [INFO] Descending... Alt: 0.02m, Telemetry: False, Logic: True
+2025-10-25 20:22:29,910 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:22:31,924 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:22:33,941 [INFO] Descending... Alt: 0.04m, Telemetry: False, Logic: True
+2025-10-25 20:22:35,955 [INFO] Descending... Alt: 0.04m, Telemetry: False, Logic: True
+2025-10-25 20:22:37,970 [INFO] Descending... Alt: 0.02m, Telemetry: False, Logic: True
+2025-10-25 20:22:39,983 [INFO] Descending... Alt: 0.02m, Telemetry: False, Logic: True
+2025-10-25 20:22:41,997 [INFO] Descending... Alt: -0.02m, Telemetry: False, Logic: True
+2025-10-25 20:22:44,010 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:22:46,024 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:22:48,038 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:22:50,050 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:22:52,062 [INFO] Descending... Alt: -0.02m, Telemetry: False, Logic: True
+2025-10-25 20:22:54,076 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:22:56,090 [INFO] Descending... Alt: 0.02m, Telemetry: False, Logic: True
+2025-10-25 20:22:58,103 [INFO] Descending... Alt: 0.04m, Telemetry: False, Logic: True
+2025-10-25 20:23:00,118 [INFO] Descending... Alt: 0.02m, Telemetry: False, Logic: True
+2025-10-25 20:23:02,132 [INFO] Descending... Alt: 0.02m, Telemetry: False, Logic: True
+2025-10-25 20:23:04,144 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:23:06,157 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:23:08,171 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:23:10,186 [INFO] Descending... Alt: 0.02m, Telemetry: False, Logic: True
+2025-10-25 20:23:12,202 [INFO] Descending... Alt: 0.02m, Telemetry: False, Logic: True
+2025-10-25 20:23:14,229 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:23:16,252 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:23:18,278 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:23:20,307 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:23:22,347 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:23:24,388 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:23:26,419 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:23:28,450 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:23:30,468 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:23:32,497 [INFO] Descending... Alt: -0.00m, Telemetry: False, Logic: True
+2025-10-25 20:23:34,530 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:23:36,547 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:23:38,571 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:23:40,603 [INFO] Descending... Alt: -0.02m, Telemetry: False, Logic: True
+2025-10-25 20:23:42,629 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:23:44,652 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:23:46,683 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:23:48,712 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:23:50,742 [INFO] Descending... Alt: 0.02m, Telemetry: False, Logic: True
+2025-10-25 20:23:52,775 [INFO] Descending... Alt: 0.03m, Telemetry: False, Logic: True
+2025-10-25 20:23:54,804 [INFO] Descending... Alt: 0.04m, Telemetry: False, Logic: True
+2025-10-25 20:23:56,833 [INFO] Descending... Alt: 0.03m, Telemetry: False, Logic: True
+2025-10-25 20:23:58,861 [INFO] Descending... Alt: 0.03m, Telemetry: False, Logic: True
+2025-10-25 20:24:00,891 [INFO] Descending... Alt: 0.03m, Telemetry: False, Logic: True
+2025-10-25 20:24:02,920 [INFO] Descending... Alt: 0.05m, Telemetry: False, Logic: True
+2025-10-25 20:24:04,941 [INFO] Descending... Alt: 0.02m, Telemetry: False, Logic: True
+2025-10-25 20:24:06,970 [INFO] Descending... Alt: 0.04m, Telemetry: False, Logic: True
+2025-10-25 20:24:08,993 [INFO] Descending... Alt: 0.02m, Telemetry: False, Logic: True
+2025-10-25 20:24:11,026 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:24:13,059 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:24:15,081 [INFO] Descending... Alt: 0.03m, Telemetry: False, Logic: True
+2025-10-25 20:24:17,108 [INFO] Descending... Alt: 0.03m, Telemetry: False, Logic: True
+2025-10-25 20:24:19,149 [INFO] Descending... Alt: 0.03m, Telemetry: False, Logic: True
+2025-10-25 20:24:21,173 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:24:23,203 [INFO] Descending... Alt: 0.02m, Telemetry: False, Logic: True
+2025-10-25 20:24:25,233 [INFO] Descending... Alt: 0.02m, Telemetry: False, Logic: True
+2025-10-25 20:24:27,269 [INFO] Descending... Alt: 0.02m, Telemetry: False, Logic: True
+2025-10-25 20:24:29,296 [INFO] Descending... Alt: 0.02m, Telemetry: False, Logic: True
+2025-10-25 20:24:31,319 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:24:33,353 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:24:35,374 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:24:37,405 [INFO] Descending... Alt: 0.03m, Telemetry: False, Logic: True
+2025-10-25 20:24:39,442 [INFO] Descending... Alt: 0.02m, Telemetry: False, Logic: True
+2025-10-25 20:24:41,481 [INFO] Descending... Alt: 0.02m, Telemetry: False, Logic: True
+2025-10-25 20:24:43,511 [INFO] Descending... Alt: 0.04m, Telemetry: False, Logic: True
+2025-10-25 20:24:45,542 [INFO] Descending... Alt: 0.02m, Telemetry: False, Logic: True
+2025-10-25 20:24:47,574 [INFO] Descending... Alt: -0.00m, Telemetry: False, Logic: True
+2025-10-25 20:24:49,606 [INFO] Descending... Alt: -0.02m, Telemetry: False, Logic: True
+2025-10-25 20:24:51,639 [INFO] Descending... Alt: -0.00m, Telemetry: False, Logic: True
+2025-10-25 20:24:53,671 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:24:55,700 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:24:57,733 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:24:59,764 [INFO] Descending... Alt: -0.02m, Telemetry: False, Logic: True
+2025-10-25 20:25:01,793 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:25:03,817 [INFO] Descending... Alt: 0.03m, Telemetry: False, Logic: True
+2025-10-25 20:25:05,849 [INFO] Descending... Alt: 0.03m, Telemetry: False, Logic: True
+2025-10-25 20:25:07,880 [INFO] Descending... Alt: 0.02m, Telemetry: False, Logic: True
+2025-10-25 20:25:09,913 [INFO] Descending... Alt: 0.04m, Telemetry: False, Logic: True
+2025-10-25 20:25:11,943 [INFO] Descending... Alt: 0.03m, Telemetry: False, Logic: True
+2025-10-25 20:25:13,974 [INFO] Descending... Alt: 0.02m, Telemetry: False, Logic: True
+2025-10-25 20:25:16,006 [INFO] Descending... Alt: 0.03m, Telemetry: False, Logic: True
+2025-10-25 20:25:18,036 [INFO] Descending... Alt: 0.04m, Telemetry: False, Logic: True
+2025-10-25 20:25:20,067 [INFO] Descending... Alt: 0.03m, Telemetry: False, Logic: True
+2025-10-25 20:25:22,100 [INFO] Descending... Alt: 0.03m, Telemetry: False, Logic: True
+2025-10-25 20:25:24,129 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:25:26,161 [INFO] Descending... Alt: -0.00m, Telemetry: False, Logic: True
+2025-10-25 20:25:28,192 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:25:30,219 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:25:32,257 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:25:34,300 [INFO] Descending... Alt: 0.02m, Telemetry: False, Logic: True
+2025-10-25 20:25:36,339 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:25:38,380 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:25:40,423 [INFO] Descending... Alt: -0.00m, Telemetry: False, Logic: True
+2025-10-25 20:25:42,463 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:25:44,506 [INFO] Descending... Alt: 0.02m, Telemetry: False, Logic: True
+2025-10-25 20:25:46,545 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:25:48,579 [INFO] Descending... Alt: 0.02m, Telemetry: False, Logic: True
+2025-10-25 20:25:50,612 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:25:52,642 [INFO] Descending... Alt: 0.03m, Telemetry: False, Logic: True
+2025-10-25 20:25:54,673 [INFO] Descending... Alt: 0.04m, Telemetry: False, Logic: True
+2025-10-25 20:25:56,701 [INFO] Descending... Alt: 0.04m, Telemetry: False, Logic: True
+2025-10-25 20:25:58,735 [INFO] Descending... Alt: 0.02m, Telemetry: False, Logic: True
+2025-10-25 20:26:00,764 [INFO] Descending... Alt: 0.02m, Telemetry: False, Logic: True
+2025-10-25 20:26:02,787 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:26:04,808 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:26:06,836 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:26:07,395 [ERROR] Could not retrieve flight mode. Aborting for safety.
+2025-10-25 20:26:07,396 [ERROR] Landing failed or was aborted.
+2025-10-25 20:26:07,396 [WARNING] Mission was aborted by pilot. Returning to Sentry Mode.
+2025-10-25 20:26:07,399 [ERROR] An error occurred in the Sentry loop: <AioRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:50051: Failed to connect to remote host: connect: Connection refused (111)"
+	debug_error_string = "UNKNOWN:Error received from peer  {grpc_message:"failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:50051: Failed to connect to remote host: connect: Connection refused (111)", grpc_status:14}"
+>
+2025-10-25 20:27:35,917 [INFO] Connecting to system at udp://:14540...
+2025-10-25 20:27:35,951 [INFO] MAVSDK version: v3.10.2 (mavsdk_impl.cpp:32)
+2025-10-25 20:27:35,952 [INFO] System connected.
+2025-10-25 20:27:35,952 [INFO] Performing pre-flight health checks...
+2025-10-25 20:27:35,974 [INFO] Waiting to discover system on udp://:14540... (connection_initiator.h:20)
+2025-10-25 20:27:35,974 [WARNING] Connection using udp:// is deprecated, please use udpin:// or udpout:// (cli_arg.cpp:28)
+2025-10-25 20:27:35,974 [ERROR] bind error: Address in use (udp_connection.cpp:99)
+2025-10-25 20:27:35,975 [ERROR] Connection failed: Bind error (connection_initiator.h:47)
+2025-10-25 20:27:36,595 [INFO] Pre-flight checks passed.
+2025-10-25 20:27:36,595 [INFO] --- System ready. Entering Sentry Mode. ---
+2025-10-25 20:27:36,595 [INFO] Pilot can arm and fly manually. Switch to OFFBOARD to trigger the mission.
+2025-10-25 20:27:38,647 [ERROR] An error occurred in the Sentry loop: NO_SETPOINT_SET: 'No Setpoint Set'; origin: start(); params: ()
+2025-10-25 20:29:51,651 [INFO] Connecting to system at udp://:14540...
+2025-10-25 20:29:51,680 [INFO] System connected.
+2025-10-25 20:29:51,680 [INFO] Performing pre-flight health checks...
+2025-10-25 20:29:51,682 [INFO] MAVSDK version: v3.10.2 (mavsdk_impl.cpp:32)
+2025-10-25 20:29:51,703 [INFO] Waiting to discover system on udp://:14540... (connection_initiator.h:20)
+2025-10-25 20:29:51,704 [WARNING] Connection using udp:// is deprecated, please use udpin:// or udpout:// (cli_arg.cpp:28)
+2025-10-25 20:29:51,704 [ERROR] bind error: Address in use (udp_connection.cpp:99)
+2025-10-25 20:29:51,704 [ERROR] Connection failed: Bind error (connection_initiator.h:47)
+2025-10-25 20:29:52,390 [INFO] Pre-flight checks passed.
+2025-10-25 20:29:52,391 [INFO] --- System ready. Entering Sentry Mode. ---
+2025-10-25 20:29:52,391 [INFO] Pilot can arm and fly manually. Switch to OFFBOARD to trigger the mission.
+2025-10-25 20:29:54,444 [ERROR] An error occurred in the Sentry loop: NO_SETPOINT_SET: 'No Setpoint Set'; origin: start(); params: ()
+2025-10-25 20:32:01,408 [INFO] Connecting to system at udp://:14540...
+2025-10-25 20:32:01,447 [INFO] MAVSDK version: v3.10.2 (mavsdk_impl.cpp:32)
+2025-10-25 20:32:01,482 [INFO] Waiting to discover system on udp://:14540... (connection_initiator.h:20)
+2025-10-25 20:32:01,482 [WARNING] Connection using udp:// is deprecated, please use udpin:// or udpout:// (cli_arg.cpp:28)
+2025-10-25 20:32:01,484 [INFO] New system on: 127.0.0.1:14580 (with system ID: 1) (udp_connection.cpp:263)
+2025-10-25 20:32:01,669 [WARNING] Vehicle type changed (new type: 2, old type: 0) (system_impl.cpp:323)
+2025-10-25 20:32:01,670 [INFO] System discovered (connection_initiator.h:62)
+2025-10-25 20:32:01,674 [INFO] Server started (grpc_server.cpp:177)
+2025-10-25 20:32:01,674 [INFO] Server set to listen on 0.0.0.0:50051 (grpc_server.cpp:178)
+2025-10-25 20:32:02,399 [INFO] System connected.
+2025-10-25 20:32:02,400 [INFO] Performing pre-flight health checks...
+2025-10-25 20:32:02,697 [INFO] Pre-flight checks passed.
+2025-10-25 20:32:02,697 [INFO] --- System ready. Entering Sentry Mode. ---
+2025-10-25 20:32:02,697 [INFO] Pilot can arm and fly manually. Switch to OFFBOARD to trigger the mission.
+2025-10-25 20:32:06,781 [ERROR] An error occurred in the Sentry loop: NO_SETPOINT_SET: 'No Setpoint Set'; origin: start(); params: ()
+2025-10-25 20:33:47,345 [INFO] Connecting to system at udp://:14540...
+2025-10-25 20:33:47,363 [INFO] MAVSDK version: v3.10.2 (mavsdk_impl.cpp:32)
+2025-10-25 20:33:47,379 [INFO] Waiting to discover system on udp://:14540... (connection_initiator.h:20)
+2025-10-25 20:33:47,379 [WARNING] Connection using udp:// is deprecated, please use udpin:// or udpout:// (cli_arg.cpp:28)
+2025-10-25 20:33:47,383 [INFO] New system on: 127.0.0.1:14580 (with system ID: 1) (udp_connection.cpp:263)
+2025-10-25 20:33:47,584 [WARNING] Vehicle type changed (new type: 2, old type: 0) (system_impl.cpp:323)
+2025-10-25 20:33:47,584 [INFO] System discovered (connection_initiator.h:62)
+2025-10-25 20:33:47,586 [INFO] Server started (grpc_server.cpp:177)
+2025-10-25 20:33:47,586 [INFO] Server set to listen on 0.0.0.0:50051 (grpc_server.cpp:178)
+2025-10-25 20:33:48,409 [INFO] System connected.
+2025-10-25 20:33:48,409 [INFO] Performing pre-flight health checks...
+2025-10-25 20:33:48,591 [WARNING] Waiting for system to be ready (GPS, Home, IMU)...
+2025-10-25 20:33:49,597 [INFO] Pre-flight checks passed.
+2025-10-25 20:33:49,597 [INFO] --- System ready. Entering Sentry Mode. ---
+2025-10-25 20:33:49,597 [INFO] Pilot can arm and fly manually. Switch to OFFBOARD to trigger the mission.
+2025-10-25 20:33:51,610 [ERROR] An error occurred in the Sentry loop: NO_SETPOINT_SET: 'No Setpoint Set'; origin: start(); params: ()
+2025-10-25 20:36:13,821 [INFO] Connecting to system at udp://:14540...
+2025-10-25 20:36:13,859 [INFO] MAVSDK version: v3.10.2 (mavsdk_impl.cpp:32)
+2025-10-25 20:36:13,895 [INFO] Waiting to discover system on udp://:14540... (connection_initiator.h:20)
+2025-10-25 20:36:13,895 [WARNING] Connection using udp:// is deprecated, please use udpin:// or udpout:// (cli_arg.cpp:28)
+2025-10-25 20:36:13,897 [INFO] New system on: 127.0.0.1:14580 (with system ID: 1) (udp_connection.cpp:263)
+2025-10-25 20:36:14,317 [WARNING] Vehicle type changed (new type: 2, old type: 0) (system_impl.cpp:323)
+2025-10-25 20:36:14,317 [INFO] System discovered (connection_initiator.h:62)
+2025-10-25 20:36:14,320 [INFO] Server started (grpc_server.cpp:177)
+2025-10-25 20:36:14,321 [INFO] Server set to listen on 0.0.0.0:50051 (grpc_server.cpp:178)
+2025-10-25 20:36:14,727 [INFO] System connected.
+2025-10-25 20:36:14,728 [INFO] Performing pre-flight health checks...
+2025-10-25 20:36:15,335 [INFO] Pre-flight checks passed.
+2025-10-25 20:36:15,335 [INFO] --- System ready. Entering Sentry Mode. ---
+2025-10-25 20:36:15,335 [INFO] Pilot can arm and fly manually. Switch to OFFBOARD to trigger the mission.
+2025-10-25 20:36:52,521 [WARNING] Received ack for not-existing command: 176! Ignoring... (mavlink_command_sender.cpp:304)
+2025-10-25 20:36:54,213 [INFO] --- OFFBOARD TRIGGERED: EXECUTING SQUARE MISSION ---
+2025-10-25 20:36:54,213 [INFO] Arming system...
+2025-10-25 20:36:54,223 [WARNING] Received ack for not-existing command: 176! Ignoring... (mavlink_command_sender.cpp:304)
+2025-10-25 20:36:55,236 [INFO] Executing controlled takeoff to 3.0m...
+2025-10-25 20:36:56,256 [INFO] Ascending... Altitude: -0.00m, Speed: 1.00m/s
+2025-10-25 20:36:57,276 [INFO] Ascending... Altitude: -0.01m, Speed: 1.00m/s
+2025-10-25 20:36:58,293 [INFO] Ascending... Altitude: -0.01m, Speed: 1.00m/s
+2025-10-25 20:36:59,317 [INFO] Ascending... Altitude: -0.02m, Speed: 1.00m/s
+2025-10-25 20:37:00,335 [INFO] Ascending... Altitude: 0.29m, Speed: 1.00m/s
+2025-10-25 20:37:01,358 [INFO] Ascending... Altitude: 1.10m, Speed: 0.79m/s
+2025-10-25 20:37:02,377 [INFO] Ascending... Altitude: 1.72m, Speed: 0.53m/s
+2025-10-25 20:37:03,395 [INFO] Ascending... Altitude: 2.15m, Speed: 0.36m/s
+2025-10-25 20:37:04,412 [INFO] Ascending... Altitude: 2.44m, Speed: 0.23m/s
+2025-10-25 20:37:05,430 [INFO] Ascending... Altitude: 2.64m, Speed: 0.20m/s
+2025-10-25 20:37:06,447 [INFO] Target altitude reached.
+2025-10-25 20:37:06,448 [INFO] Capturing home position and calculating square corners...
+2025-10-25 20:37:06,467 [INFO] Square corners calculated relative to Home (P0): Lat=47.39797, Lon=8.54616
+2025-10-25 20:37:06,467 [INFO] --- Flying to Corner 1 (Forward) ---
+2025-10-25 20:37:06,467 [INFO] Moving to absolute target: Lat=47.39802, Lon=8.54616
+2025-10-25 20:37:06,488 [INFO] Altitude lock engaged. Target altitude: 2.85m
+2025-10-25 20:37:07,467 [INFO] Moving... Rem: 5.02m, AltError: 0.02m, Vz_correct: -0.04m/s
+2025-10-25 20:37:08,493 [INFO] Moving... Rem: 4.55m, AltError: 0.01m, Vz_correct: -0.02m/s
+2025-10-25 20:37:09,510 [INFO] Moving... Rem: 3.53m, AltError: 0.01m, Vz_correct: -0.02m/s
+2025-10-25 20:37:10,527 [INFO] Moving... Rem: 2.55m, AltError: -0.02m, Vz_correct: 0.04m/s
+2025-10-25 20:37:11,547 [INFO] Moving... Rem: 1.54m, AltError: 0.01m, Vz_correct: -0.03m/s
+2025-10-25 20:37:12,564 [INFO] Moving... Rem: 0.62m, AltError: 0.00m, Vz_correct: -0.00m/s
+2025-10-25 20:37:13,583 [INFO] Absolute target position reached.
+2025-10-25 20:37:13,584 [INFO] Arrived at Corner 1 (Forward). Hovering for 2 seconds.
+2025-10-25 20:37:15,585 [INFO] --- Flying to Corner 2 (Right) ---
+2025-10-25 20:37:15,586 [INFO] Moving to absolute target: Lat=47.39802, Lon=8.54623
+2025-10-25 20:37:15,598 [INFO] Altitude lock engaged. Target altitude: 2.84m
+2025-10-25 20:37:16,636 [INFO] Moving... Rem: 4.94m, AltError: -0.01m, Vz_correct: 0.03m/s
+2025-10-25 20:37:17,658 [INFO] Moving... Rem: 4.50m, AltError: -0.01m, Vz_correct: 0.01m/s
+2025-10-25 20:37:18,678 [INFO] Moving... Rem: 3.51m, AltError: 0.02m, Vz_correct: -0.04m/s
+2025-10-25 20:37:19,693 [INFO] Moving... Rem: 2.48m, AltError: -0.01m, Vz_correct: 0.02m/s
+2025-10-25 20:37:20,713 [INFO] Moving... Rem: 1.44m, AltError: -0.02m, Vz_correct: 0.03m/s
+2025-10-25 20:37:21,731 [INFO] Moving... Rem: 0.55m, AltError: 0.02m, Vz_correct: -0.03m/s
+2025-10-25 20:37:22,749 [INFO] Absolute target position reached.
+2025-10-25 20:37:22,751 [INFO] Arrived at Corner 2 (Right). Hovering for 2 seconds.
+2025-10-25 20:37:24,752 [INFO] --- Flying to Corner 3 (Back) ---
+2025-10-25 20:37:24,752 [INFO] Moving to absolute target: Lat=47.39797, Lon=8.54623
+2025-10-25 20:37:24,766 [INFO] Altitude lock engaged. Target altitude: 2.83m
+2025-10-25 20:37:25,808 [INFO] Moving... Rem: 4.91m, AltError: -0.01m, Vz_correct: 0.01m/s
+2025-10-25 20:37:26,826 [INFO] Moving... Rem: 4.41m, AltError: -0.02m, Vz_correct: 0.03m/s
+2025-10-25 20:37:27,847 [INFO] Moving... Rem: 3.38m, AltError: 0.02m, Vz_correct: -0.04m/s
+2025-10-25 20:37:28,864 [INFO] Moving... Rem: 2.34m, AltError: -0.03m, Vz_correct: 0.05m/s
+2025-10-25 20:37:29,885 [INFO] Moving... Rem: 1.30m, AltError: -0.00m, Vz_correct: 0.00m/s
+2025-10-25 20:37:30,902 [INFO] Moving... Rem: 0.43m, AltError: 0.01m, Vz_correct: -0.01m/s
+2025-10-25 20:37:31,919 [INFO] Absolute target position reached.
+2025-10-25 20:37:31,920 [INFO] Arrived at Corner 3 (Back). Hovering for 2 seconds.
+2025-10-25 20:37:33,922 [INFO] --- Flying to Home (P0) ---
+2025-10-25 20:37:33,923 [INFO] Moving to absolute target: Lat=47.39797, Lon=8.54616
+2025-10-25 20:37:33,939 [INFO] Altitude lock engaged. Target altitude: 2.86m
+2025-10-25 20:37:34,977 [INFO] Moving... Rem: 4.94m, AltError: -0.01m, Vz_correct: 0.01m/s
+2025-10-25 20:37:35,997 [INFO] Moving... Rem: 4.48m, AltError: 0.01m, Vz_correct: -0.02m/s
+2025-10-25 20:37:37,017 [INFO] Moving... Rem: 3.48m, AltError: 0.01m, Vz_correct: -0.01m/s
+2025-10-25 20:37:38,036 [INFO] Moving... Rem: 2.46m, AltError: -0.01m, Vz_correct: 0.02m/s
+2025-10-25 20:37:39,057 [INFO] Moving... Rem: 1.43m, AltError: 0.01m, Vz_correct: -0.03m/s
+2025-10-25 20:37:40,078 [INFO] Moving... Rem: 0.53m, AltError: -0.03m, Vz_correct: 0.05m/s
+2025-10-25 20:37:41,094 [INFO] Absolute target position reached.
+2025-10-25 20:37:41,096 [INFO] Arrived at Home (P0). Hovering for 2 seconds.
+2025-10-25 20:37:43,098 [INFO] Executing smart landing...
+2025-10-25 20:37:43,314 [INFO] Descending... Alt: 2.86m, Telemetry: False, Logic: False
+2025-10-25 20:37:44,336 [INFO] Descending... Alt: 2.22m, Telemetry: False, Logic: False
+2025-10-25 20:37:45,354 [INFO] Descending... Alt: 1.50m, Telemetry: False, Logic: False
+2025-10-25 20:37:46,373 [INFO] Descending... Alt: 1.25m, Telemetry: False, Logic: False
+2025-10-25 20:37:47,393 [INFO] Descending... Alt: 1.04m, Telemetry: False, Logic: False
+2025-10-25 20:37:48,411 [INFO] Descending... Alt: 0.85m, Telemetry: False, Logic: False
+2025-10-25 20:37:49,428 [INFO] Descending... Alt: 0.67m, Telemetry: False, Logic: False
+2025-10-25 20:37:50,446 [INFO] Descending... Alt: 0.48m, Telemetry: False, Logic: False
+2025-10-25 20:37:51,467 [INFO] Descending... Alt: 0.27m, Telemetry: False, Logic: False
+2025-10-25 20:37:52,484 [INFO] Descending... Alt: 0.08m, Telemetry: False, Logic: False
+2025-10-25 20:37:53,502 [INFO] Descending... Alt: -0.04m, Telemetry: False, Logic: False
+2025-10-25 20:37:54,520 [INFO] Descending... Alt: -0.03m, Telemetry: False, Logic: False
+2025-10-25 20:37:55,538 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: False
+2025-10-25 20:37:56,560 [INFO] Descending... Alt: -0.00m, Telemetry: False, Logic: True
+2025-10-25 20:37:57,579 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:37:58,602 [INFO] Descending... Alt: -0.02m, Telemetry: False, Logic: True
+2025-10-25 20:37:59,618 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:38:00,638 [INFO] Descending... Alt: -0.02m, Telemetry: False, Logic: True
+2025-10-25 20:38:01,659 [INFO] Descending... Alt: -0.03m, Telemetry: False, Logic: True
+2025-10-25 20:38:02,679 [INFO] Descending... Alt: -0.04m, Telemetry: False, Logic: True
+2025-10-25 20:38:03,698 [INFO] Descending... Alt: -0.03m, Telemetry: False, Logic: True
+2025-10-25 20:38:04,717 [INFO] Descending... Alt: -0.02m, Telemetry: False, Logic: True
+2025-10-25 20:38:05,735 [INFO] Descending... Alt: -0.03m, Telemetry: False, Logic: True
+2025-10-25 20:38:06,754 [INFO] Descending... Alt: -0.04m, Telemetry: False, Logic: True
+2025-10-25 20:38:07,781 [INFO] Descending... Alt: -0.06m, Telemetry: False, Logic: True
+2025-10-25 20:38:08,809 [INFO] Descending... Alt: -0.05m, Telemetry: False, Logic: True
+2025-10-25 20:38:09,827 [INFO] Descending... Alt: -0.06m, Telemetry: False, Logic: True
+2025-10-25 20:38:10,846 [INFO] Descending... Alt: -0.06m, Telemetry: False, Logic: True
+2025-10-25 20:38:11,868 [INFO] Descending... Alt: -0.04m, Telemetry: False, Logic: True
+2025-10-25 20:38:12,899 [INFO] Descending... Alt: -0.03m, Telemetry: False, Logic: True
+2025-10-25 20:38:13,963 [INFO] Descending... Alt: -0.02m, Telemetry: False, Logic: True
+2025-10-25 20:38:14,976 [INFO] Descending... Alt: -0.03m, Telemetry: False, Logic: True
+2025-10-25 20:38:15,992 [INFO] Descending... Alt: -0.02m, Telemetry: False, Logic: True
+2025-10-25 20:38:17,009 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:38:18,026 [INFO] Descending... Alt: -0.00m, Telemetry: False, Logic: True
+2025-10-25 20:38:19,043 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:38:20,058 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:38:21,073 [INFO] Descending... Alt: -0.02m, Telemetry: False, Logic: True
+2025-10-25 20:38:22,089 [INFO] Descending... Alt: -0.00m, Telemetry: False, Logic: True
+2025-10-25 20:38:23,105 [INFO] Descending... Alt: -0.00m, Telemetry: False, Logic: True
+2025-10-25 20:38:24,127 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:38:25,144 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:38:26,164 [INFO] Descending... Alt: -0.02m, Telemetry: False, Logic: True
+2025-10-25 20:38:27,180 [INFO] Descending... Alt: -0.02m, Telemetry: False, Logic: True
+2025-10-25 20:38:28,200 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:38:29,224 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:38:30,244 [INFO] Descending... Alt: -0.02m, Telemetry: False, Logic: True
+2025-10-25 20:38:31,268 [INFO] Descending... Alt: -0.02m, Telemetry: False, Logic: True
+2025-10-25 20:38:32,325 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:38:33,354 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:38:34,372 [INFO] Descending... Alt: -0.02m, Telemetry: False, Logic: True
+2025-10-25 20:38:35,391 [INFO] Descending... Alt: -0.02m, Telemetry: False, Logic: True
+2025-10-25 20:38:36,407 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:38:37,436 [INFO] Descending... Alt: -0.02m, Telemetry: False, Logic: True
+2025-10-25 20:38:38,456 [INFO] Descending... Alt: -0.02m, Telemetry: False, Logic: True
+2025-10-25 20:38:39,494 [INFO] Descending... Alt: -0.02m, Telemetry: False, Logic: True
+2025-10-25 20:38:40,527 [INFO] Descending... Alt: -0.02m, Telemetry: False, Logic: True
+2025-10-25 20:38:41,592 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:38:42,623 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:38:43,672 [INFO] Descending... Alt: -0.02m, Telemetry: False, Logic: True
+2025-10-25 20:38:44,708 [INFO] Descending... Alt: -0.04m, Telemetry: False, Logic: True
+2025-10-25 20:38:45,764 [INFO] Descending... Alt: -0.05m, Telemetry: False, Logic: True
+2025-10-25 20:38:46,781 [INFO] Descending... Alt: -0.05m, Telemetry: False, Logic: True
+2025-10-25 20:38:47,799 [INFO] Descending... Alt: -0.05m, Telemetry: False, Logic: True
+2025-10-25 20:38:48,820 [INFO] Descending... Alt: -0.04m, Telemetry: False, Logic: True
+2025-10-25 20:38:49,850 [INFO] Descending... Alt: -0.03m, Telemetry: False, Logic: True
+2025-10-25 20:38:50,886 [INFO] Descending... Alt: -0.04m, Telemetry: False, Logic: True
+2025-10-25 20:38:51,914 [INFO] Descending... Alt: -0.03m, Telemetry: False, Logic: True
+2025-10-25 20:38:52,939 [INFO] Descending... Alt: -0.04m, Telemetry: False, Logic: True
+2025-10-25 20:38:53,954 [INFO] Descending... Alt: -0.04m, Telemetry: False, Logic: True
+2025-10-25 20:38:54,970 [INFO] Descending... Alt: -0.04m, Telemetry: False, Logic: True
+2025-10-25 20:38:55,987 [INFO] Descending... Alt: -0.04m, Telemetry: False, Logic: True
+2025-10-25 20:38:57,007 [INFO] Descending... Alt: -0.04m, Telemetry: False, Logic: True
+2025-10-25 20:38:58,024 [INFO] Descending... Alt: -0.03m, Telemetry: False, Logic: True
+2025-10-25 20:38:59,042 [INFO] Descending... Alt: -0.04m, Telemetry: False, Logic: True
+2025-10-25 20:39:00,060 [INFO] Descending... Alt: -0.04m, Telemetry: False, Logic: True
+2025-10-25 20:39:01,079 [INFO] Descending... Alt: -0.04m, Telemetry: False, Logic: True
+2025-10-25 20:39:02,135 [INFO] Descending... Alt: -0.03m, Telemetry: False, Logic: True
+2025-10-25 20:39:03,207 [INFO] Descending... Alt: -0.02m, Telemetry: False, Logic: True
+2025-10-25 20:39:04,263 [INFO] Descending... Alt: -0.02m, Telemetry: False, Logic: True
+2025-10-25 20:39:05,282 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:39:06,301 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:39:07,321 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:39:08,347 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:39:09,371 [INFO] Descending... Alt: -0.02m, Telemetry: False, Logic: True
+2025-10-25 20:39:10,406 [INFO] Descending... Alt: -0.04m, Telemetry: False, Logic: True
+2025-10-25 20:39:11,431 [INFO] Descending... Alt: -0.02m, Telemetry: False, Logic: True
+2025-10-25 20:39:12,454 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:39:13,478 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:39:13,558 [INFO] Sentry mode interrupted by user. Shutting down.
+2025-10-25 20:39:16,289 [INFO] Connecting to system at udp://:14540...
+2025-10-25 20:39:16,333 [INFO] MAVSDK version: v3.10.2 (mavsdk_impl.cpp:32)
+2025-10-25 20:39:16,361 [INFO] Waiting to discover system on udp://:14540... (connection_initiator.h:20)
+2025-10-25 20:39:16,361 [WARNING] Connection using udp:// is deprecated, please use udpin:// or udpout:// (cli_arg.cpp:28)
+2025-10-25 20:39:16,366 [INFO] New system on: 127.0.0.1:14580 (with system ID: 1) (udp_connection.cpp:263)
+2025-10-25 20:39:17,369 [WARNING] Vehicle type changed (new type: 2, old type: 0) (system_impl.cpp:323)
+2025-10-25 20:39:17,369 [INFO] System discovered (connection_initiator.h:62)
+2025-10-25 20:39:17,372 [INFO] Server started (grpc_server.cpp:177)
+2025-10-25 20:39:17,373 [INFO] Server set to listen on 0.0.0.0:50051 (grpc_server.cpp:178)
+2025-10-25 20:39:18,938 [INFO] System connected.
+2025-10-25 20:39:18,938 [INFO] Performing pre-flight health checks...
+2025-10-25 20:39:19,407 [INFO] Pre-flight checks passed.
+2025-10-25 20:39:19,408 [INFO] --- System ready. Entering Sentry Mode. ---
+2025-10-25 20:39:19,408 [INFO] Pilot can arm and fly manually. Switch to OFFBOARD to trigger the mission.
+2025-10-25 20:39:21,448 [ERROR] An error occurred in the Sentry loop: NO_SETPOINT_SET: 'No Setpoint Set'; origin: start(); params: ()
+2025-10-25 20:45:07,636 [INFO] Connecting to system at udp://:14540...
+2025-10-25 20:45:07,695 [INFO] System connected.
+2025-10-25 20:45:07,695 [INFO] Performing pre-flight health checks...
+2025-10-25 20:45:07,698 [INFO] MAVSDK version: v3.10.2 (mavsdk_impl.cpp:32)
+2025-10-25 20:45:07,727 [INFO] Waiting to discover system on udp://:14540... (connection_initiator.h:20)
+2025-10-25 20:45:07,728 [WARNING] Connection using udp:// is deprecated, please use udpin:// or udpout:// (cli_arg.cpp:28)
+2025-10-25 20:45:07,728 [ERROR] bind error: Address in use (udp_connection.cpp:99)
+2025-10-25 20:45:07,728 [ERROR] Connection failed: Bind error (connection_initiator.h:47)
+2025-10-25 20:45:07,775 [INFO] Pre-flight checks passed.
+2025-10-25 20:45:07,775 [INFO] --- System ready. Entering Sentry Mode. ---
+2025-10-25 20:45:07,775 [INFO] Pilot can arm and fly manually. Switch to OFFBOARD to trigger the mission.
+2025-10-25 20:45:46,602 [INFO] --- OFFBOARD TRIGGERED: EXECUTING SQUARE MISSION ---
+2025-10-25 20:45:46,602 [INFO] Arming system...
+2025-10-25 20:45:47,619 [INFO] Executing controlled takeoff to 3.0m...
+2025-10-25 20:45:48,646 [INFO] Ascending... Altitude: -0.01m, Speed: 1.00m/s
+2025-10-25 20:45:49,669 [INFO] Ascending... Altitude: -0.00m, Speed: 1.00m/s
+2025-10-25 20:45:50,693 [INFO] Ascending... Altitude: -0.00m, Speed: 1.00m/s
+2025-10-25 20:45:51,717 [INFO] Ascending... Altitude: -0.00m, Speed: 1.00m/s
+2025-10-25 20:45:52,737 [INFO] Ascending... Altitude: 0.34m, Speed: 1.00m/s
+2025-10-25 20:45:53,757 [INFO] Ascending... Altitude: 1.14m, Speed: 0.78m/s
+2025-10-25 20:45:54,787 [INFO] Ascending... Altitude: 1.74m, Speed: 0.52m/s
+2025-10-25 20:45:55,804 [INFO] Ascending... Altitude: 2.16m, Speed: 0.35m/s
+2025-10-25 20:45:56,826 [INFO] Ascending... Altitude: 2.47m, Speed: 0.22m/s
+2025-10-25 20:45:57,843 [INFO] Ascending... Altitude: 2.68m, Speed: 0.20m/s
+2025-10-25 20:45:58,865 [INFO] Target altitude reached.
+2025-10-25 20:45:58,868 [INFO] Capturing home position and calculating square corners...
+2025-10-25 20:45:58,885 [INFO] Square corners calculated relative to Home (P0): Lat=47.39797, Lon=8.54616
+2025-10-25 20:45:58,886 [INFO] --- Flying to Corner 1 (Forward) ---
+2025-10-25 20:45:58,886 [INFO] Moving to absolute target: Lat=47.39806, Lon=8.54616
+2025-10-25 20:45:58,906 [INFO] Altitude lock engaged. Target altitude: 2.86m
+2025-10-25 20:45:59,889 [INFO] Moving... Rem: 10.01m, AltError: 0.03m, Vz_correct: -0.06m/s
+2025-10-25 20:46:00,909 [INFO] Moving... Rem: 9.54m, AltError: -0.00m, Vz_correct: 0.00m/s
+2025-10-25 20:46:01,931 [INFO] Moving... Rem: 8.54m, AltError: 0.01m, Vz_correct: -0.03m/s
+2025-10-25 20:46:02,952 [INFO] Moving... Rem: 7.52m, AltError: 0.01m, Vz_correct: -0.01m/s
+2025-10-25 20:46:03,971 [INFO] Moving... Rem: 6.49m, AltError: 0.01m, Vz_correct: -0.01m/s
+2025-10-25 20:46:04,989 [INFO] Moving... Rem: 5.48m, AltError: -0.01m, Vz_correct: 0.02m/s
+2025-10-25 20:46:06,010 [INFO] Moving... Rem: 4.47m, AltError: -0.01m, Vz_correct: 0.01m/s
+2025-10-25 20:46:07,033 [INFO] Moving... Rem: 3.43m, AltError: -0.00m, Vz_correct: 0.00m/s
+2025-10-25 20:46:08,048 [INFO] Moving... Rem: 2.42m, AltError: 0.00m, Vz_correct: -0.01m/s
+2025-10-25 20:46:09,064 [INFO] Moving... Rem: 1.42m, AltError: -0.01m, Vz_correct: 0.01m/s
+2025-10-25 20:46:10,078 [INFO] Moving... Rem: 0.54m, AltError: -0.00m, Vz_correct: 0.00m/s
+2025-10-25 20:46:11,093 [INFO] Absolute target position reached.
+2025-10-25 20:46:11,093 [INFO] Arrived at Corner 1 (Forward). Hovering for 2 seconds.
+2025-10-25 20:46:13,095 [INFO] --- Flying to Corner 2 (Right) ---
+2025-10-25 20:46:13,095 [INFO] Moving to absolute target: Lat=47.39806, Lon=8.54630
+2025-10-25 20:46:13,104 [INFO] Altitude lock engaged. Target altitude: 2.86m
+2025-10-25 20:46:13,125 [INFO] Moving... Rem: 9.94m, AltError: 0.00m, Vz_correct: -0.00m/s
+2025-10-25 20:46:14,143 [INFO] Moving... Rem: 9.47m, AltError: -0.00m, Vz_correct: 0.01m/s
+2025-10-25 20:46:15,160 [INFO] Moving... Rem: 8.47m, AltError: 0.01m, Vz_correct: -0.02m/s
+2025-10-25 20:46:16,178 [INFO] Moving... Rem: 7.45m, AltError: 0.00m, Vz_correct: -0.01m/s
+2025-10-25 20:46:17,195 [INFO] Moving... Rem: 6.43m, AltError: -0.01m, Vz_correct: 0.02m/s
+2025-10-25 20:46:18,220 [INFO] Moving... Rem: 5.41m, AltError: 0.01m, Vz_correct: -0.02m/s
+2025-10-25 20:46:19,241 [INFO] Moving... Rem: 4.39m, AltError: -0.01m, Vz_correct: 0.03m/s
+2025-10-25 20:46:20,259 [INFO] Moving... Rem: 3.36m, AltError: 0.01m, Vz_correct: -0.03m/s
+2025-10-25 20:46:21,278 [INFO] Moving... Rem: 2.35m, AltError: 0.00m, Vz_correct: -0.00m/s
+2025-10-25 20:46:22,299 [INFO] Moving... Rem: 1.34m, AltError: -0.01m, Vz_correct: 0.01m/s
+2025-10-25 20:46:23,322 [INFO] Moving... Rem: 0.45m, AltError: -0.00m, Vz_correct: 0.01m/s
+2025-10-25 20:46:24,342 [INFO] Absolute target position reached.
+2025-10-25 20:46:24,343 [INFO] Arrived at Corner 2 (Right). Hovering for 2 seconds.
+2025-10-25 20:46:26,345 [INFO] --- Flying to Corner 3 (Back) ---
+2025-10-25 20:46:26,345 [INFO] Moving to absolute target: Lat=47.39797, Lon=8.54630
+2025-10-25 20:46:26,359 [INFO] Altitude lock engaged. Target altitude: 2.84m
+2025-10-25 20:46:26,380 [INFO] Moving... Rem: 9.92m, AltError: 0.00m, Vz_correct: -0.00m/s
+2025-10-25 20:46:27,400 [INFO] Moving... Rem: 9.45m, AltError: -0.01m, Vz_correct: 0.01m/s
+2025-10-25 20:46:28,420 [INFO] Moving... Rem: 8.46m, AltError: 0.01m, Vz_correct: -0.02m/s
+2025-10-25 20:46:29,439 [INFO] Moving... Rem: 7.43m, AltError: -0.01m, Vz_correct: 0.01m/s
+2025-10-25 20:46:30,458 [INFO] Moving... Rem: 6.38m, AltError: 0.03m, Vz_correct: -0.05m/s
+2025-10-25 20:46:31,476 [INFO] Moving... Rem: 5.32m, AltError: -0.01m, Vz_correct: 0.01m/s
+2025-10-25 20:46:32,495 [INFO] Moving... Rem: 4.26m, AltError: 0.00m, Vz_correct: -0.00m/s
+2025-10-25 20:46:33,515 [INFO] Moving... Rem: 3.22m, AltError: 0.03m, Vz_correct: -0.05m/s
+2025-10-25 20:46:34,539 [INFO] Moving... Rem: 2.19m, AltError: -0.03m, Vz_correct: 0.05m/s
+2025-10-25 20:46:35,559 [INFO] Moving... Rem: 1.18m, AltError: 0.00m, Vz_correct: -0.01m/s
+2025-10-25 20:46:36,578 [INFO] Moving... Rem: 0.35m, AltError: 0.00m, Vz_correct: -0.00m/s
+2025-10-25 20:46:37,601 [INFO] Absolute target position reached.
+2025-10-25 20:46:37,604 [INFO] Arrived at Corner 3 (Back). Hovering for 2 seconds.
+2025-10-25 20:46:39,606 [INFO] --- Flying to Home (P0) ---
+2025-10-25 20:46:39,607 [INFO] Moving to absolute target: Lat=47.39797, Lon=8.54616
+2025-10-25 20:46:39,620 [INFO] Altitude lock engaged. Target altitude: 2.87m
+2025-10-25 20:46:39,643 [INFO] Moving... Rem: 9.95m, AltError: 0.00m, Vz_correct: -0.00m/s
+2025-10-25 20:46:40,662 [INFO] Moving... Rem: 9.44m, AltError: -0.02m, Vz_correct: 0.04m/s
+2025-10-25 20:46:41,686 [INFO] Moving... Rem: 8.42m, AltError: 0.02m, Vz_correct: -0.04m/s
+2025-10-25 20:46:42,705 [INFO] Moving... Rem: 7.41m, AltError: -0.02m, Vz_correct: 0.03m/s
+2025-10-25 20:46:43,724 [INFO] Moving... Rem: 6.39m, AltError: 0.02m, Vz_correct: -0.03m/s
+2025-10-25 20:46:44,745 [INFO] Moving... Rem: 5.33m, AltError: -0.02m, Vz_correct: 0.04m/s
+2025-10-25 20:46:45,767 [INFO] Moving... Rem: 4.30m, AltError: 0.01m, Vz_correct: -0.03m/s
+2025-10-25 20:46:46,790 [INFO] Moving... Rem: 3.26m, AltError: -0.02m, Vz_correct: 0.03m/s
+2025-10-25 20:46:47,809 [INFO] Moving... Rem: 2.20m, AltError: 0.02m, Vz_correct: -0.04m/s
+2025-10-25 20:46:48,827 [INFO] Moving... Rem: 1.18m, AltError: -0.02m, Vz_correct: 0.05m/s
+2025-10-25 20:46:49,845 [INFO] Moving... Rem: 0.34m, AltError: 0.01m, Vz_correct: -0.02m/s
+2025-10-25 20:46:50,863 [INFO] Absolute target position reached.
+2025-10-25 20:46:50,865 [INFO] Arrived at Home (P0). Hovering for 2 seconds.
+2025-10-25 20:46:52,867 [INFO] Executing smart landing...
+2025-10-25 20:46:53,100 [INFO] Descending... Alt: 2.90m, Telemetry: False, Logic: False
+2025-10-25 20:46:54,119 [INFO] Descending... Alt: 2.25m, Telemetry: False, Logic: False
+2025-10-25 20:46:55,138 [INFO] Descending... Alt: 1.53m, Telemetry: False, Logic: False
+2025-10-25 20:46:56,156 [INFO] Descending... Alt: 0.81m, Telemetry: False, Logic: False
+2025-10-25 20:46:57,178 [INFO] Descending... Alt: 0.58m, Telemetry: False, Logic: False
+2025-10-25 20:46:58,199 [INFO] Descending... Alt: 0.40m, Telemetry: False, Logic: False
+2025-10-25 20:46:59,221 [INFO] Descending... Alt: 0.21m, Telemetry: False, Logic: False
+2025-10-25 20:47:00,242 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: False
+2025-10-25 20:47:01,263 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: False
+2025-10-25 20:47:02,284 [INFO] Descending... Alt: -0.00m, Telemetry: False, Logic: False
+2025-10-25 20:47:03,306 [INFO] Descending... Alt: -0.02m, Telemetry: False, Logic: True
+2025-10-25 20:47:04,329 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:47:05,349 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:47:06,371 [INFO] Descending... Alt: -0.00m, Telemetry: False, Logic: True
+2025-10-25 20:47:07,391 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:47:08,412 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:47:09,431 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:47:10,454 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:47:11,475 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:47:12,495 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:47:13,514 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:47:14,533 [INFO] Descending... Alt: -0.00m, Telemetry: False, Logic: True
+2025-10-25 20:47:15,551 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:47:16,571 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:47:17,590 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:47:18,608 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:47:19,628 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:47:20,649 [INFO] Descending... Alt: -0.02m, Telemetry: False, Logic: True
+2025-10-25 20:47:21,669 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:47:22,690 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:47:23,711 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:47:24,732 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:47:25,755 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:47:26,776 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:47:27,803 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:47:28,826 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:47:29,850 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:47:30,874 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:47:31,901 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:47:32,921 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:47:33,942 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:47:34,960 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:47:35,986 [INFO] Descending... Alt: -0.00m, Telemetry: False, Logic: True
+2025-10-25 20:47:37,008 [INFO] Descending... Alt: -0.02m, Telemetry: False, Logic: True
+2025-10-25 20:47:38,030 [INFO] Descending... Alt: -0.03m, Telemetry: False, Logic: True
+2025-10-25 20:47:39,056 [INFO] Descending... Alt: -0.03m, Telemetry: False, Logic: True
+2025-10-25 20:47:40,080 [INFO] Descending... Alt: -0.03m, Telemetry: False, Logic: True
+2025-10-25 20:47:41,106 [INFO] Descending... Alt: -0.03m, Telemetry: False, Logic: True
+2025-10-25 20:47:42,130 [INFO] Descending... Alt: -0.03m, Telemetry: False, Logic: True
+2025-10-25 20:47:43,154 [INFO] Descending... Alt: -0.02m, Telemetry: False, Logic: True
+2025-10-25 20:47:44,177 [INFO] Descending... Alt: -0.03m, Telemetry: False, Logic: True
+2025-10-25 20:47:45,197 [INFO] Descending... Alt: -0.04m, Telemetry: False, Logic: True
+2025-10-25 20:47:46,219 [INFO] Descending... Alt: -0.03m, Telemetry: False, Logic: True
+2025-10-25 20:47:47,241 [INFO] Descending... Alt: -0.02m, Telemetry: False, Logic: True
+2025-10-25 20:47:48,272 [INFO] Descending... Alt: -0.04m, Telemetry: False, Logic: True
+2025-10-25 20:47:49,307 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:47:50,333 [INFO] Descending... Alt: 0.02m, Telemetry: False, Logic: True
+2025-10-25 20:47:51,353 [INFO] Descending... Alt: 0.03m, Telemetry: False, Logic: True
+2025-10-25 20:47:52,374 [INFO] Descending... Alt: 0.03m, Telemetry: False, Logic: True
+2025-10-25 20:47:53,401 [INFO] Descending... Alt: 0.03m, Telemetry: False, Logic: True
+2025-10-25 20:47:54,426 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:47:55,445 [INFO] Descending... Alt: 0.02m, Telemetry: False, Logic: True
+2025-10-25 20:47:56,463 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:47:57,482 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:47:58,501 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:47:59,521 [INFO] Descending... Alt: -0.00m, Telemetry: False, Logic: True
+2025-10-25 20:48:00,541 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:48:01,560 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:48:02,591 [INFO] Descending... Alt: 0.02m, Telemetry: False, Logic: True
+2025-10-25 20:48:03,620 [INFO] Descending... Alt: 0.02m, Telemetry: False, Logic: True
+2025-10-25 20:48:04,640 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:48:05,662 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:48:06,680 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:48:07,699 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:48:08,725 [INFO] Descending... Alt: 0.02m, Telemetry: False, Logic: True
+2025-10-25 20:48:09,756 [INFO] Descending... Alt: 0.02m, Telemetry: False, Logic: True
+2025-10-25 20:48:10,775 [INFO] Descending... Alt: -0.00m, Telemetry: False, Logic: True
+2025-10-25 20:48:11,799 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:48:12,836 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:48:13,857 [INFO] Descending... Alt: 0.03m, Telemetry: False, Logic: True
+2025-10-25 20:48:14,876 [INFO] Descending... Alt: 0.04m, Telemetry: False, Logic: True
+2025-10-25 20:48:15,893 [INFO] Descending... Alt: 0.04m, Telemetry: False, Logic: True
+2025-10-25 20:48:16,911 [INFO] Descending... Alt: 0.03m, Telemetry: False, Logic: True
+2025-10-25 20:48:17,930 [INFO] Descending... Alt: 0.04m, Telemetry: False, Logic: True
+2025-10-25 20:48:18,948 [INFO] Descending... Alt: 0.04m, Telemetry: False, Logic: True
+2025-10-25 20:48:19,965 [INFO] Descending... Alt: 0.02m, Telemetry: False, Logic: True
+2025-10-25 20:48:20,984 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:48:21,999 [INFO] Descending... Alt: -0.00m, Telemetry: False, Logic: True
+2025-10-25 20:48:23,018 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:48:24,037 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:48:25,055 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:48:26,072 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:48:27,090 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:48:28,112 [INFO] Descending... Alt: -0.02m, Telemetry: False, Logic: True
+2025-10-25 20:48:29,131 [INFO] Descending... Alt: -0.02m, Telemetry: False, Logic: True
+2025-10-25 20:48:30,157 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:48:31,180 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:48:32,198 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:48:33,217 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:48:34,237 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:48:35,257 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:48:36,278 [INFO] Descending... Alt: -0.00m, Telemetry: False, Logic: True
+2025-10-25 20:48:37,297 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:48:38,319 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:48:39,338 [INFO] Descending... Alt: 0.02m, Telemetry: False, Logic: True
+2025-10-25 20:48:40,364 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:48:41,382 [INFO] Descending... Alt: 0.02m, Telemetry: False, Logic: True
+2025-10-25 20:48:42,403 [INFO] Descending... Alt: 0.02m, Telemetry: False, Logic: True
+2025-10-25 20:48:43,423 [INFO] Descending... Alt: 0.02m, Telemetry: False, Logic: True
+2025-10-25 20:48:44,446 [INFO] Descending... Alt: 0.02m, Telemetry: False, Logic: True
+2025-10-25 20:48:45,469 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:48:46,487 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:48:47,505 [INFO] Descending... Alt: -0.00m, Telemetry: False, Logic: True
+2025-10-25 20:48:48,522 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:48:49,541 [INFO] Descending... Alt: -0.02m, Telemetry: False, Logic: True
+2025-10-25 20:48:50,561 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:48:51,578 [INFO] Descending... Alt: -0.00m, Telemetry: False, Logic: True
+2025-10-25 20:48:52,599 [INFO] Descending... Alt: 0.02m, Telemetry: False, Logic: True
+2025-10-25 20:48:53,617 [INFO] Descending... Alt: 0.03m, Telemetry: False, Logic: True
+2025-10-25 20:48:54,635 [INFO] Descending... Alt: 0.02m, Telemetry: False, Logic: True
+2025-10-25 20:48:55,653 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:48:56,670 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:48:57,690 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:48:58,709 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:48:59,726 [INFO] Descending... Alt: -0.02m, Telemetry: False, Logic: True
+2025-10-25 20:49:00,748 [INFO] Descending... Alt: -0.02m, Telemetry: False, Logic: True
+2025-10-25 20:49:01,767 [INFO] Descending... Alt: -0.02m, Telemetry: False, Logic: True
+2025-10-25 20:49:02,787 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:49:03,812 [INFO] Descending... Alt: -0.00m, Telemetry: False, Logic: True
+2025-10-25 20:49:04,835 [INFO] Descending... Alt: -0.00m, Telemetry: False, Logic: True
+2025-10-25 20:49:05,855 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:49:06,878 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:49:07,896 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:49:08,917 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:49:09,941 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:49:10,961 [INFO] Descending... Alt: 0.02m, Telemetry: False, Logic: True
+2025-10-25 20:49:11,980 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:49:13,001 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:49:14,023 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:49:15,043 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:49:16,065 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:49:17,086 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:49:18,105 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:49:19,126 [INFO] Descending... Alt: -0.02m, Telemetry: False, Logic: True
+2025-10-25 20:49:20,146 [INFO] Descending... Alt: -0.04m, Telemetry: False, Logic: True
+2025-10-25 20:49:21,165 [INFO] Descending... Alt: -0.02m, Telemetry: False, Logic: True
+2025-10-25 20:49:22,187 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:49:23,205 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:49:24,224 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:49:25,249 [INFO] Descending... Alt: -0.02m, Telemetry: False, Logic: True
+2025-10-25 20:49:26,264 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:49:27,284 [INFO] Descending... Alt: -0.02m, Telemetry: False, Logic: True
+2025-10-25 20:49:28,301 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:49:29,326 [INFO] Descending... Alt: -0.03m, Telemetry: False, Logic: True
+2025-10-25 20:49:30,344 [INFO] Descending... Alt: -0.04m, Telemetry: False, Logic: True
+2025-10-25 20:49:31,361 [INFO] Descending... Alt: -0.05m, Telemetry: False, Logic: True
+2025-10-25 20:49:32,378 [INFO] Descending... Alt: -0.04m, Telemetry: False, Logic: True
+2025-10-25 20:49:33,396 [INFO] Descending... Alt: -0.02m, Telemetry: False, Logic: True
+2025-10-25 20:49:34,417 [INFO] Descending... Alt: -0.02m, Telemetry: False, Logic: True
+2025-10-25 20:49:35,437 [INFO] Descending... Alt: -0.02m, Telemetry: False, Logic: True
+2025-10-25 20:49:36,456 [INFO] Descending... Alt: -0.02m, Telemetry: False, Logic: True
+2025-10-25 20:49:37,476 [INFO] Descending... Alt: -0.02m, Telemetry: False, Logic: True
+2025-10-25 20:49:38,496 [INFO] Descending... Alt: -0.00m, Telemetry: False, Logic: True
+2025-10-25 20:49:39,519 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:49:40,540 [INFO] Descending... Alt: -0.02m, Telemetry: False, Logic: True
+2025-10-25 20:49:41,561 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:49:42,583 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:49:43,607 [INFO] Descending... Alt: -0.02m, Telemetry: False, Logic: True
+2025-10-25 20:49:44,630 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:49:45,648 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:49:46,668 [INFO] Descending... Alt: -0.02m, Telemetry: False, Logic: True
+2025-10-25 20:49:47,688 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:49:48,708 [INFO] Descending... Alt: -0.00m, Telemetry: False, Logic: True
+2025-10-25 20:49:49,725 [INFO] Descending... Alt: -0.02m, Telemetry: False, Logic: True
+2025-10-25 20:49:50,747 [INFO] Descending... Alt: -0.02m, Telemetry: False, Logic: True
+2025-10-25 20:49:51,770 [INFO] Descending... Alt: -0.00m, Telemetry: False, Logic: True
+2025-10-25 20:49:52,791 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:49:53,813 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:49:54,837 [INFO] Descending... Alt: -0.00m, Telemetry: False, Logic: True
+2025-10-25 20:49:55,873 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:49:56,900 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:49:57,938 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:49:58,965 [INFO] Descending... Alt: -0.00m, Telemetry: False, Logic: True
+2025-10-25 20:49:59,999 [INFO] Descending... Alt: -0.00m, Telemetry: False, Logic: True
+2025-10-25 20:50:01,026 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:50:02,062 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:50:03,104 [INFO] Descending... Alt: -0.02m, Telemetry: False, Logic: True
+2025-10-25 20:50:04,145 [INFO] Descending... Alt: -0.03m, Telemetry: False, Logic: True
+2025-10-25 20:50:05,172 [INFO] Descending... Alt: -0.02m, Telemetry: False, Logic: True
+2025-10-25 20:50:06,195 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:50:07,219 [INFO] Descending... Alt: -0.02m, Telemetry: False, Logic: True
+2025-10-25 20:50:08,247 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:50:09,274 [INFO] Descending... Alt: -0.00m, Telemetry: False, Logic: True
+2025-10-25 20:50:10,302 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:50:11,326 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:50:12,352 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:50:13,377 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:50:14,404 [INFO] Descending... Alt: 0.02m, Telemetry: False, Logic: True
+2025-10-25 20:50:15,426 [INFO] Descending... Alt: 0.03m, Telemetry: False, Logic: True
+2025-10-25 20:50:16,448 [INFO] Descending... Alt: 0.02m, Telemetry: False, Logic: True
+2025-10-25 20:50:17,471 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:50:18,492 [INFO] Descending... Alt: -0.00m, Telemetry: False, Logic: True
+2025-10-25 20:50:19,515 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:50:20,538 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:50:21,568 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:50:22,589 [INFO] Descending... Alt: -0.00m, Telemetry: False, Logic: True
+2025-10-25 20:50:23,612 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:50:24,634 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:50:25,656 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:50:26,677 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:50:27,697 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:50:28,721 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:50:29,745 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:50:30,769 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:50:31,795 [INFO] Descending... Alt: -0.00m, Telemetry: False, Logic: True
+2025-10-25 20:50:32,822 [INFO] Descending... Alt: -0.00m, Telemetry: False, Logic: True
+2025-10-25 20:50:33,847 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:50:34,868 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:50:35,891 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:50:36,912 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:50:37,935 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:50:38,959 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:50:39,984 [INFO] Descending... Alt: -0.00m, Telemetry: False, Logic: True
+2025-10-25 20:50:41,007 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:50:42,033 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:50:43,054 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:50:44,076 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:50:45,099 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:50:46,123 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:50:47,147 [INFO] Descending... Alt: -0.02m, Telemetry: False, Logic: True
+2025-10-25 20:50:48,166 [INFO] Descending... Alt: -0.02m, Telemetry: False, Logic: True
+2025-10-25 20:50:49,192 [INFO] Descending... Alt: -0.02m, Telemetry: False, Logic: True
+2025-10-25 20:50:50,216 [INFO] Descending... Alt: -0.02m, Telemetry: False, Logic: True
+2025-10-25 20:50:51,237 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:50:52,257 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:50:53,280 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:50:54,300 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:50:55,322 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:50:56,341 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:50:57,363 [INFO] Descending... Alt: -0.00m, Telemetry: False, Logic: True
+2025-10-25 20:50:58,383 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:50:59,404 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:51:00,422 [INFO] Descending... Alt: -0.00m, Telemetry: False, Logic: True
+2025-10-25 20:51:01,442 [INFO] Descending... Alt: -0.02m, Telemetry: False, Logic: True
+2025-10-25 20:51:02,467 [INFO] Descending... Alt: -0.02m, Telemetry: False, Logic: True
+2025-10-25 20:51:03,487 [INFO] Descending... Alt: -0.02m, Telemetry: False, Logic: True
+2025-10-25 20:51:04,508 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:51:05,525 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:51:06,543 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:51:07,566 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:51:08,596 [INFO] Descending... Alt: -0.00m, Telemetry: False, Logic: True
+2025-10-25 20:51:09,615 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:51:10,639 [INFO] Descending... Alt: -0.02m, Telemetry: False, Logic: True
+2025-10-25 20:51:11,666 [INFO] Descending... Alt: -0.00m, Telemetry: False, Logic: True
+2025-10-25 20:51:12,704 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:51:13,731 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:51:14,757 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:51:15,786 [INFO] Descending... Alt: -0.00m, Telemetry: False, Logic: True
+2025-10-25 20:51:16,813 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:51:17,836 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:51:18,863 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:51:19,888 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:51:20,910 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:51:21,931 [INFO] Descending... Alt: -0.02m, Telemetry: False, Logic: True
+2025-10-25 20:51:22,951 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:51:23,972 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:51:24,993 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:51:26,013 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:51:27,034 [INFO] Descending... Alt: 0.02m, Telemetry: False, Logic: True
+2025-10-25 20:51:28,053 [INFO] Descending... Alt: 0.02m, Telemetry: False, Logic: True
+2025-10-25 20:51:29,072 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:51:30,092 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:51:31,111 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:51:32,130 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:51:33,153 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:51:34,174 [INFO] Descending... Alt: 0.03m, Telemetry: False, Logic: True
+2025-10-25 20:51:35,195 [INFO] Descending... Alt: 0.04m, Telemetry: False, Logic: True
+2025-10-25 20:51:36,225 [INFO] Descending... Alt: 0.02m, Telemetry: False, Logic: True
+2025-10-25 20:51:37,259 [INFO] Descending... Alt: -0.00m, Telemetry: False, Logic: True
+2025-10-25 20:51:38,285 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:51:39,311 [INFO] Descending... Alt: -0.00m, Telemetry: False, Logic: True
+2025-10-25 20:51:40,333 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:51:41,359 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:51:42,384 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:51:43,409 [INFO] Descending... Alt: -0.00m, Telemetry: False, Logic: True
+2025-10-25 20:51:44,435 [INFO] Descending... Alt: -0.00m, Telemetry: False, Logic: True
+2025-10-25 20:51:45,461 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:51:46,486 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:51:47,510 [INFO] Descending... Alt: 0.02m, Telemetry: False, Logic: True
+2025-10-25 20:51:48,540 [INFO] Descending... Alt: 0.03m, Telemetry: False, Logic: True
+2025-10-25 20:51:49,571 [INFO] Descending... Alt: 0.03m, Telemetry: False, Logic: True
+2025-10-25 20:51:50,597 [INFO] Descending... Alt: 0.02m, Telemetry: False, Logic: True
+2025-10-25 20:51:51,621 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:51:52,646 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:51:53,671 [INFO] Descending... Alt: -0.02m, Telemetry: False, Logic: True
+2025-10-25 20:51:54,697 [INFO] Descending... Alt: -0.00m, Telemetry: False, Logic: True
+2025-10-25 20:51:55,721 [INFO] Descending... Alt: -0.02m, Telemetry: False, Logic: True
+2025-10-25 20:51:56,744 [INFO] Descending... Alt: -0.02m, Telemetry: False, Logic: True
+2025-10-25 20:51:57,767 [INFO] Descending... Alt: -0.03m, Telemetry: False, Logic: True
+2025-10-25 20:51:58,792 [INFO] Descending... Alt: -0.04m, Telemetry: False, Logic: True
+2025-10-25 20:51:59,817 [INFO] Descending... Alt: -0.03m, Telemetry: False, Logic: True
+2025-10-25 20:52:00,842 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:52:01,869 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:52:02,899 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:52:03,925 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:52:04,955 [INFO] Descending... Alt: -0.00m, Telemetry: False, Logic: True
+2025-10-25 20:52:05,981 [INFO] Descending... Alt: -0.00m, Telemetry: False, Logic: True
+2025-10-25 20:52:07,005 [INFO] Descending... Alt: -0.00m, Telemetry: False, Logic: True
+2025-10-25 20:52:08,028 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:52:09,050 [INFO] Descending... Alt: -0.02m, Telemetry: False, Logic: True
+2025-10-25 20:52:10,069 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:52:11,088 [INFO] Descending... Alt: -0.02m, Telemetry: False, Logic: True
+2025-10-25 20:52:12,108 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:52:13,127 [INFO] Descending... Alt: -0.02m, Telemetry: False, Logic: True
+2025-10-25 20:52:14,145 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:52:15,163 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:52:16,184 [INFO] Descending... Alt: -0.03m, Telemetry: False, Logic: True
+2025-10-25 20:52:17,213 [INFO] Descending... Alt: -0.02m, Telemetry: False, Logic: True
+2025-10-25 20:52:18,233 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:52:19,255 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:52:20,275 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:52:21,296 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:52:22,316 [INFO] Descending... Alt: 0.02m, Telemetry: False, Logic: True
+2025-10-25 20:52:23,338 [INFO] Descending... Alt: 0.02m, Telemetry: False, Logic: True
+2025-10-25 20:52:24,356 [INFO] Descending... Alt: 0.02m, Telemetry: False, Logic: True
+2025-10-25 20:52:25,374 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:52:26,396 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:52:27,416 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:52:28,435 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:52:29,456 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:52:30,474 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:52:31,495 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:52:32,522 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:52:33,543 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:52:34,572 [INFO] Descending... Alt: -0.02m, Telemetry: False, Logic: True
+2025-10-25 20:52:35,597 [INFO] Descending... Alt: -0.03m, Telemetry: False, Logic: True
+2025-10-25 20:52:36,619 [INFO] Descending... Alt: -0.02m, Telemetry: False, Logic: True
+2025-10-25 20:52:37,642 [INFO] Descending... Alt: -0.00m, Telemetry: False, Logic: True
+2025-10-25 20:52:38,661 [INFO] Descending... Alt: 0.02m, Telemetry: False, Logic: True
+2025-10-25 20:52:39,680 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:52:40,699 [INFO] Descending... Alt: 0.02m, Telemetry: False, Logic: True
+2025-10-25 20:52:41,721 [INFO] Descending... Alt: 0.02m, Telemetry: False, Logic: True
+2025-10-25 20:52:42,742 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:52:43,762 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:52:44,785 [INFO] Descending... Alt: -0.00m, Telemetry: False, Logic: True
+2025-10-25 20:52:45,806 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:52:46,824 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:52:47,845 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:52:48,864 [INFO] Descending... Alt: -0.02m, Telemetry: False, Logic: True
+2025-10-25 20:52:49,883 [INFO] Descending... Alt: -0.02m, Telemetry: False, Logic: True
+2025-10-25 20:52:50,904 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:52:51,920 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:52:52,939 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:52:53,958 [INFO] Descending... Alt: -0.02m, Telemetry: False, Logic: True
+2025-10-25 20:52:54,981 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:52:56,001 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:52:57,027 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:52:58,048 [INFO] Descending... Alt: 0.03m, Telemetry: False, Logic: True
+2025-10-25 20:52:59,072 [INFO] Descending... Alt: 0.04m, Telemetry: False, Logic: True
+2025-10-25 20:53:00,105 [INFO] Descending... Alt: 0.02m, Telemetry: False, Logic: True
+2025-10-25 20:53:01,129 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:53:02,154 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:53:03,178 [INFO] Descending... Alt: -0.00m, Telemetry: False, Logic: True
+2025-10-25 20:53:04,200 [INFO] Descending... Alt: -0.00m, Telemetry: False, Logic: True
+2025-10-25 20:53:05,222 [INFO] Descending... Alt: -0.02m, Telemetry: False, Logic: True
+2025-10-25 20:53:06,242 [INFO] Descending... Alt: -0.02m, Telemetry: False, Logic: True
+2025-10-25 20:53:07,258 [INFO] Descending... Alt: -0.02m, Telemetry: False, Logic: True
+2025-10-25 20:53:08,276 [INFO] Descending... Alt: -0.02m, Telemetry: False, Logic: True
+2025-10-25 20:53:09,294 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:53:10,316 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:53:11,338 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:53:12,363 [INFO] Descending... Alt: -0.00m, Telemetry: False, Logic: True
+2025-10-25 20:53:13,385 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:53:14,404 [INFO] Descending... Alt: -0.00m, Telemetry: False, Logic: True
+2025-10-25 20:53:15,424 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:53:16,443 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:53:17,464 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:53:18,485 [INFO] Descending... Alt: -0.00m, Telemetry: False, Logic: True
+2025-10-25 20:53:19,504 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:53:20,524 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:53:21,545 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:53:22,563 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:53:23,585 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:53:24,603 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:53:25,629 [INFO] Descending... Alt: -0.02m, Telemetry: False, Logic: True
+2025-10-25 20:53:26,648 [INFO] Descending... Alt: -0.02m, Telemetry: False, Logic: True
+2025-10-25 20:53:27,673 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:53:28,692 [INFO] Descending... Alt: -0.00m, Telemetry: False, Logic: True
+2025-10-25 20:53:29,710 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:53:30,729 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:53:31,748 [INFO] Descending... Alt: 0.02m, Telemetry: False, Logic: True
+2025-10-25 20:53:32,774 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:53:33,801 [INFO] Descending... Alt: -0.00m, Telemetry: False, Logic: True
+2025-10-25 20:53:34,826 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:53:35,849 [INFO] Descending... Alt: -0.00m, Telemetry: False, Logic: True
+2025-10-25 20:53:36,869 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:53:37,890 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:53:38,909 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:53:39,932 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:53:40,951 [INFO] Descending... Alt: 0.02m, Telemetry: False, Logic: True
+2025-10-25 20:53:41,973 [INFO] Descending... Alt: 0.02m, Telemetry: False, Logic: True
+2025-10-25 20:53:42,993 [INFO] Descending... Alt: 0.02m, Telemetry: False, Logic: True
+2025-10-25 20:53:44,019 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:53:45,043 [INFO] Descending... Alt: -0.00m, Telemetry: False, Logic: True
+2025-10-25 20:53:46,064 [INFO] Descending... Alt: -0.02m, Telemetry: False, Logic: True
+2025-10-25 20:53:47,082 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:53:48,110 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:53:49,130 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:53:50,148 [INFO] Descending... Alt: -0.02m, Telemetry: False, Logic: True
+2025-10-25 20:53:51,166 [INFO] Descending... Alt: -0.00m, Telemetry: False, Logic: True
+2025-10-25 20:53:52,185 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:53:53,206 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:53:54,228 [INFO] Descending... Alt: 0.02m, Telemetry: False, Logic: True
+2025-10-25 20:53:55,247 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:53:56,270 [INFO] Descending... Alt: 0.02m, Telemetry: False, Logic: True
+2025-10-25 20:53:57,289 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:53:58,309 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:53:59,329 [INFO] Descending... Alt: -0.00m, Telemetry: False, Logic: True
+2025-10-25 20:54:00,347 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:54:01,370 [INFO] Descending... Alt: -0.00m, Telemetry: False, Logic: True
+2025-10-25 20:54:02,388 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:54:03,408 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:54:04,433 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:54:05,460 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:54:06,482 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:54:07,508 [INFO] Descending... Alt: -0.00m, Telemetry: False, Logic: True
+2025-10-25 20:54:08,534 [INFO] Descending... Alt: -0.00m, Telemetry: False, Logic: True
+2025-10-25 20:54:09,557 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:54:10,582 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:54:11,610 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:54:12,637 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:54:13,669 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:54:14,693 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:54:15,718 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:54:16,743 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:54:17,766 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:54:18,791 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:54:19,811 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:54:20,834 [INFO] Descending... Alt: -0.02m, Telemetry: False, Logic: True
+2025-10-25 20:54:21,856 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:54:22,878 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:54:23,907 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:54:24,929 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:54:25,948 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:54:26,970 [INFO] Descending... Alt: -0.00m, Telemetry: False, Logic: True
+2025-10-25 20:54:27,995 [INFO] Descending... Alt: -0.02m, Telemetry: False, Logic: True
+2025-10-25 20:54:29,020 [INFO] Descending... Alt: -0.02m, Telemetry: False, Logic: True
+2025-10-25 20:54:30,045 [INFO] Descending... Alt: -0.02m, Telemetry: False, Logic: True
+2025-10-25 20:54:31,064 [INFO] Descending... Alt: -0.02m, Telemetry: False, Logic: True
+2025-10-25 20:54:32,084 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:54:33,109 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:54:34,132 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:54:35,155 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:54:36,175 [INFO] Descending... Alt: -0.02m, Telemetry: False, Logic: True
+2025-10-25 20:54:37,194 [INFO] Descending... Alt: -0.03m, Telemetry: False, Logic: True
+2025-10-25 20:54:38,214 [INFO] Descending... Alt: -0.02m, Telemetry: False, Logic: True
+2025-10-25 20:54:39,233 [INFO] Descending... Alt: -0.02m, Telemetry: False, Logic: True
+2025-10-25 20:54:40,252 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:54:41,285 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:54:42,308 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:54:43,338 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:54:44,359 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:54:45,384 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:54:46,404 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:54:47,424 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:54:48,445 [INFO] Descending... Alt: -0.02m, Telemetry: False, Logic: True
+2025-10-25 20:54:49,464 [INFO] Descending... Alt: -0.02m, Telemetry: False, Logic: True
+2025-10-25 20:54:50,493 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:54:51,514 [INFO] Descending... Alt: -0.00m, Telemetry: False, Logic: True
+2025-10-25 20:54:52,537 [INFO] Descending... Alt: -0.00m, Telemetry: False, Logic: True
+2025-10-25 20:54:53,573 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:54:54,597 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:54:55,619 [INFO] Descending... Alt: -0.02m, Telemetry: False, Logic: True
+2025-10-25 20:54:56,638 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:54:57,658 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:54:58,677 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:54:59,698 [INFO] Descending... Alt: 0.02m, Telemetry: False, Logic: True
+2025-10-25 20:55:00,717 [INFO] Descending... Alt: 0.02m, Telemetry: False, Logic: True
+2025-10-25 20:55:01,737 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:55:02,763 [INFO] Descending... Alt: -0.02m, Telemetry: False, Logic: True
+2025-10-25 20:55:03,792 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:55:04,811 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:55:05,830 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:55:06,855 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:55:07,874 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:55:08,894 [INFO] Descending... Alt: -0.02m, Telemetry: False, Logic: True
+2025-10-25 20:55:09,913 [INFO] Descending... Alt: -0.02m, Telemetry: False, Logic: True
+2025-10-25 20:55:10,933 [INFO] Descending... Alt: -0.02m, Telemetry: False, Logic: True
+2025-10-25 20:55:11,952 [INFO] Descending... Alt: -0.02m, Telemetry: False, Logic: True
+2025-10-25 20:55:12,971 [INFO] Descending... Alt: -0.02m, Telemetry: False, Logic: True
+2025-10-25 20:55:13,989 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:55:15,010 [INFO] Descending... Alt: -0.00m, Telemetry: False, Logic: True
+2025-10-25 20:55:16,041 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:55:17,065 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:55:18,089 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:55:19,112 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:55:20,136 [INFO] Descending... Alt: -0.02m, Telemetry: False, Logic: True
+2025-10-25 20:55:21,162 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:55:22,185 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:55:23,211 [INFO] Descending... Alt: 0.02m, Telemetry: False, Logic: True
+2025-10-25 20:55:24,237 [INFO] Descending... Alt: 0.02m, Telemetry: False, Logic: True
+2025-10-25 20:55:25,260 [INFO] Descending... Alt: 0.02m, Telemetry: False, Logic: True
+2025-10-25 20:55:26,287 [INFO] Descending... Alt: 0.02m, Telemetry: False, Logic: True
+2025-10-25 20:55:27,313 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:55:28,340 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:55:29,366 [INFO] Descending... Alt: 0.02m, Telemetry: False, Logic: True
+2025-10-25 20:55:30,392 [INFO] Descending... Alt: 0.02m, Telemetry: False, Logic: True
+2025-10-25 20:55:31,414 [INFO] Descending... Alt: 0.02m, Telemetry: False, Logic: True
+2025-10-25 20:55:32,446 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:55:33,475 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:55:34,504 [INFO] Descending... Alt: 0.03m, Telemetry: False, Logic: True
+2025-10-25 20:55:35,532 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:55:36,558 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:55:37,584 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:55:38,613 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:55:39,639 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:55:40,661 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:55:41,683 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:55:42,705 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:55:43,724 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:55:44,743 [INFO] Descending... Alt: -0.00m, Telemetry: False, Logic: True
+2025-10-25 20:55:45,764 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:55:46,785 [INFO] Descending... Alt: -0.03m, Telemetry: False, Logic: True
+2025-10-25 20:55:47,804 [INFO] Descending... Alt: -0.03m, Telemetry: False, Logic: True
+2025-10-25 20:55:48,822 [INFO] Descending... Alt: -0.03m, Telemetry: False, Logic: True
+2025-10-25 20:55:49,842 [INFO] Descending... Alt: -0.03m, Telemetry: False, Logic: True
+2025-10-25 20:55:50,862 [INFO] Descending... Alt: -0.03m, Telemetry: False, Logic: True
+2025-10-25 20:55:51,880 [INFO] Descending... Alt: -0.03m, Telemetry: False, Logic: True
+2025-10-25 20:55:52,900 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:55:53,918 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:55:54,939 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:55:55,960 [INFO] Descending... Alt: -0.00m, Telemetry: False, Logic: True
+2025-10-25 20:55:56,991 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:55:58,022 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:55:59,042 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:56:00,070 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:56:01,092 [INFO] Descending... Alt: -0.00m, Telemetry: False, Logic: True
+2025-10-25 20:56:02,114 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:56:03,148 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:56:04,168 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:56:05,195 [INFO] Descending... Alt: -0.02m, Telemetry: False, Logic: True
+2025-10-25 20:56:06,214 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:56:07,235 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:56:08,253 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:56:09,274 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:56:10,294 [INFO] Descending... Alt: 0.03m, Telemetry: False, Logic: True
+2025-10-25 20:56:11,315 [INFO] Descending... Alt: 0.03m, Telemetry: False, Logic: True
+2025-10-25 20:56:12,335 [INFO] Descending... Alt: 0.02m, Telemetry: False, Logic: True
+2025-10-25 20:56:13,352 [INFO] Descending... Alt: 0.03m, Telemetry: False, Logic: True
+2025-10-25 20:56:14,373 [INFO] Descending... Alt: 0.03m, Telemetry: False, Logic: True
+2025-10-25 20:56:15,403 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:56:16,427 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:56:17,447 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:56:18,466 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:56:19,486 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:56:20,506 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:56:21,527 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:56:22,546 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:56:23,568 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:56:24,587 [INFO] Descending... Alt: 0.02m, Telemetry: False, Logic: True
+2025-10-25 20:56:25,609 [INFO] Descending... Alt: 0.03m, Telemetry: False, Logic: True
+2025-10-25 20:56:26,627 [INFO] Descending... Alt: 0.03m, Telemetry: False, Logic: True
+2025-10-25 20:56:27,645 [INFO] Descending... Alt: 0.03m, Telemetry: False, Logic: True
+2025-10-25 20:56:28,666 [INFO] Descending... Alt: 0.02m, Telemetry: False, Logic: True
+2025-10-25 20:56:29,687 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:56:30,707 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:56:31,729 [INFO] Descending... Alt: -0.02m, Telemetry: False, Logic: True
+2025-10-25 20:56:32,747 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:56:33,767 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:56:34,786 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:56:35,806 [INFO] Descending... Alt: -0.02m, Telemetry: False, Logic: True
+2025-10-25 20:56:36,826 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:56:37,848 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:56:38,879 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:56:39,901 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:56:40,927 [INFO] Descending... Alt: 0.02m, Telemetry: False, Logic: True
+2025-10-25 20:56:41,953 [INFO] Descending... Alt: 0.02m, Telemetry: False, Logic: True
+2025-10-25 20:56:42,977 [INFO] Descending... Alt: 0.02m, Telemetry: False, Logic: True
+2025-10-25 20:56:44,004 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:56:45,030 [INFO] Descending... Alt: 0.03m, Telemetry: False, Logic: True
+2025-10-25 20:56:46,056 [INFO] Descending... Alt: 0.04m, Telemetry: False, Logic: True
+2025-10-25 20:56:47,082 [INFO] Descending... Alt: 0.03m, Telemetry: False, Logic: True
+2025-10-25 20:56:48,106 [INFO] Descending... Alt: 0.03m, Telemetry: False, Logic: True
+2025-10-25 20:56:49,133 [INFO] Descending... Alt: 0.03m, Telemetry: False, Logic: True
+2025-10-25 20:56:50,155 [INFO] Descending... Alt: 0.02m, Telemetry: False, Logic: True
+2025-10-25 20:56:51,180 [INFO] Descending... Alt: -0.00m, Telemetry: False, Logic: True
+2025-10-25 20:56:52,205 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:56:53,228 [INFO] Descending... Alt: -0.02m, Telemetry: False, Logic: True
+2025-10-25 20:56:54,252 [INFO] Descending... Alt: -0.02m, Telemetry: False, Logic: True
+2025-10-25 20:56:55,272 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:56:56,291 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:56:57,310 [INFO] Descending... Alt: -0.00m, Telemetry: False, Logic: True
+2025-10-25 20:56:58,329 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:56:59,350 [INFO] Descending... Alt: -0.00m, Telemetry: False, Logic: True
+2025-10-25 20:57:00,372 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:57:01,389 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:57:02,410 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:57:03,431 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:57:04,451 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:57:05,472 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:57:06,492 [INFO] Descending... Alt: 0.02m, Telemetry: False, Logic: True
+2025-10-25 20:57:07,510 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:57:08,533 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:57:09,553 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:57:10,572 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:57:11,593 [INFO] Descending... Alt: 0.03m, Telemetry: False, Logic: True
+2025-10-25 20:57:12,613 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:57:13,647 [INFO] Descending... Alt: -0.00m, Telemetry: False, Logic: True
+2025-10-25 20:57:14,681 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:57:15,710 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:57:16,742 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:57:17,773 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:57:18,805 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:57:19,837 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:57:20,871 [INFO] Descending... Alt: -0.00m, Telemetry: False, Logic: True
+2025-10-25 20:57:21,896 [INFO] Descending... Alt: -0.00m, Telemetry: False, Logic: True
+2025-10-25 20:57:22,921 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:57:23,948 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:57:24,971 [INFO] Descending... Alt: -0.02m, Telemetry: False, Logic: True
+2025-10-25 20:57:25,994 [INFO] Descending... Alt: -0.02m, Telemetry: False, Logic: True
+2025-10-25 20:57:27,017 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:57:28,049 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:57:29,076 [INFO] Descending... Alt: 0.02m, Telemetry: False, Logic: True
+2025-10-25 20:57:30,137 [INFO] Descending... Alt: 0.02m, Telemetry: False, Logic: True
+2025-10-25 20:57:31,169 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:57:32,196 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:57:33,223 [INFO] Descending... Alt: -0.00m, Telemetry: False, Logic: True
+2025-10-25 20:57:34,248 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:57:35,272 [INFO] Descending... Alt: 0.02m, Telemetry: False, Logic: True
+2025-10-25 20:57:36,297 [INFO] Descending... Alt: 0.02m, Telemetry: False, Logic: True
+2025-10-25 20:57:37,332 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:57:38,356 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:57:39,377 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:57:40,400 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:57:41,423 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:57:42,447 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:57:43,469 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:57:44,511 [INFO] Descending... Alt: 0.01m, Telemetry: False, Logic: True
+2025-10-25 20:57:45,530 [INFO] Descending... Alt: -0.00m, Telemetry: False, Logic: True
+2025-10-25 20:57:46,552 [INFO] Descending... Alt: -0.00m, Telemetry: False, Logic: True
+2025-10-25 20:57:47,574 [INFO] Descending... Alt: 0.00m, Telemetry: False, Logic: True
+2025-10-25 20:57:48,595 [INFO] Descending... Alt: -0.01m, Telemetry: False, Logic: True
+2025-10-25 20:57:49,639 [INFO] Descending... Alt: -0.00m, Telemetry: False, Logic: True

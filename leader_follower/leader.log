@@ -1,0 +1,90 @@
+2025-10-25 20:36:35,099 [INFO] [LEADER] --- Leader Drone Initializing ---
+2025-10-25 20:36:35,100 [INFO] [LEADER] Attempting to connect to flight controller at udp://:14540...
+2025-10-25 20:36:35,148 [INFO] [LEADER] Waiting for connection...
+2025-10-25 20:36:35,152 [INFO] [LEADER] ✅ Flight controller connected successfully.
+2025-10-25 20:36:35,152 [INFO] [LEADER] Starting background tasks to gather telemetry...
+2025-10-25 20:36:35,153 [INFO] [LEADER] Waiting for a valid GPS position fix before broadcasting...
+2025-10-25 20:36:35,153 [INFO] [LEADER] Still waiting for GPS fix...
+2025-10-25 20:36:35,154 [INFO] [LEADER] MAVSDK version: v3.10.2 (mavsdk_impl.cpp:32)
+2025-10-25 20:36:35,196 [INFO] [LEADER] Waiting to discover system on udp://:14540... (connection_initiator.h:20)
+2025-10-25 20:36:35,198 [WARNING] [LEADER] Connection using udp:// is deprecated, please use udpin:// or udpout:// (cli_arg.cpp:28)
+2025-10-25 20:36:35,199 [ERROR] [LEADER] bind error: Address in use (udp_connection.cpp:99)
+2025-10-25 20:36:35,199 [ERROR] [LEADER] Connection failed: Bind error (connection_initiator.h:47)
+2025-10-25 20:36:36,156 [INFO] [LEADER] 🛰️ GPS fix acquired! Latitude: 47.3979711
+2025-10-25 20:36:36,157 [INFO] [LEADER] --- Starting Main Broadcast Loop ---
+2025-10-25 20:36:36,157 [INFO] [LEADER] 📡 Broadcasting vitals to Wi-Fi address 192.168.1.111:5005
+2025-10-25 20:39:13,563 [ERROR] [LEADER] Task exception was never retrieved
+future: <Task finished name='Task-6' coro=<Leader._update_gps_info() done, defined at /home/mh/Shahin/drone_swarm/leader_follower/leader.py:90> exception=<AioRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "Socket closed"
+	debug_error_string = "UNKNOWN:Error received from peer ipv6:%5B::1%5D:50051 {grpc_message:"Socket closed", grpc_status:14}"
+>>
+Traceback (most recent call last):
+  File "/home/mh/Shahin/drone_swarm/leader_follower/leader.py", line 92, in _update_gps_info
+    async for gps_info in self.drone.telemetry.gps_info():
+  File "/home/mh/.local/lib/python3.10/site-packages/mavsdk/telemetry.py", line 3481, in gps_info
+    async for response in gps_info_stream:
+  File "/home/mh/.local/lib/python3.10/site-packages/grpc/aio/_call.py", line 368, in _fetch_stream_responses
+    await self._raise_for_status()
+  File "/home/mh/.local/lib/python3.10/site-packages/grpc/aio/_call.py", line 274, in _raise_for_status
+    raise _create_rpc_error(
+grpc.aio._call.AioRpcError: <AioRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "Socket closed"
+	debug_error_string = "UNKNOWN:Error received from peer ipv6:%5B::1%5D:50051 {grpc_message:"Socket closed", grpc_status:14}"
+>
+2025-10-25 20:39:13,568 [ERROR] [LEADER] Task exception was never retrieved
+future: <Task finished name='Task-4' coro=<Leader._update_position() done, defined at /home/mh/Shahin/drone_swarm/leader_follower/leader.py:76> exception=<AioRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "Socket closed"
+	debug_error_string = "UNKNOWN:Error received from peer ipv6:%5B::1%5D:50051 {grpc_status:14, grpc_message:"Socket closed"}"
+>>
+Traceback (most recent call last):
+  File "/home/mh/Shahin/drone_swarm/leader_follower/leader.py", line 78, in _update_position
+    async for position in self.drone.telemetry.position():
+  File "/home/mh/.local/lib/python3.10/site-packages/mavsdk/telemetry.py", line 3267, in position
+    async for response in position_stream:
+  File "/home/mh/.local/lib/python3.10/site-packages/grpc/aio/_call.py", line 368, in _fetch_stream_responses
+    await self._raise_for_status()
+  File "/home/mh/.local/lib/python3.10/site-packages/grpc/aio/_call.py", line 274, in _raise_for_status
+    raise _create_rpc_error(
+grpc.aio._call.AioRpcError: <AioRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "Socket closed"
+	debug_error_string = "UNKNOWN:Error received from peer ipv6:%5B::1%5D:50051 {grpc_status:14, grpc_message:"Socket closed"}"
+>
+2025-10-25 20:39:13,569 [ERROR] [LEADER] Task exception was never retrieved
+future: <Task finished name='Task-5' coro=<Leader._update_in_air_status() done, defined at /home/mh/Shahin/drone_swarm/leader_follower/leader.py:85> exception=<AioRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "Socket closed"
+	debug_error_string = "UNKNOWN:Error received from peer ipv6:%5B::1%5D:50051 {grpc_message:"Socket closed", grpc_status:14}"
+>>
+Traceback (most recent call last):
+  File "/home/mh/Shahin/drone_swarm/leader_follower/leader.py", line 87, in _update_in_air_status
+    async for is_in_air in self.drone.telemetry.in_air():
+  File "/home/mh/.local/lib/python3.10/site-packages/mavsdk/telemetry.py", line 3309, in in_air
+    async for response in in_air_stream:
+  File "/home/mh/.local/lib/python3.10/site-packages/grpc/aio/_call.py", line 368, in _fetch_stream_responses
+    await self._raise_for_status()
+  File "/home/mh/.local/lib/python3.10/site-packages/grpc/aio/_call.py", line 274, in _raise_for_status
+    raise _create_rpc_error(
+grpc.aio._call.AioRpcError: <AioRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "Socket closed"
+	debug_error_string = "UNKNOWN:Error received from peer ipv6:%5B::1%5D:50051 {grpc_message:"Socket closed", grpc_status:14}"
+>
+2025-10-25 20:40:48,144 [ERROR] [LEADER] NETWORK ERROR: Could not send data over Wi-Fi: [Errno 101] Network is unreachable
+2025-10-25 20:40:48,196 [ERROR] [LEADER] NETWORK ERROR: Could not send data over Wi-Fi: [Errno 101] Network is unreachable
+2025-10-25 20:40:48,247 [ERROR] [LEADER] NETWORK ERROR: Could not send data over Wi-Fi: [Errno 101] Network is unreachable
+2025-10-25 20:40:48,303 [ERROR] [LEADER] NETWORK ERROR: Could not send data over Wi-Fi: [Errno 101] Network is unreachable
+2025-10-25 20:40:48,354 [ERROR] [LEADER] NETWORK ERROR: Could not send data over Wi-Fi: [Errno 101] Network is unreachable
+2025-10-25 20:40:48,405 [ERROR] [LEADER] NETWORK ERROR: Could not send data over Wi-Fi: [Errno 101] Network is unreachable
+2025-10-25 20:40:48,457 [ERROR] [LEADER] NETWORK ERROR: Could not send data over Wi-Fi: [Errno 101] Network is unreachable
+2025-10-25 20:40:48,509 [ERROR] [LEADER] NETWORK ERROR: Could not send data over Wi-Fi: [Errno 101] Network is unreachable
+2025-10-25 20:40:48,560 [ERROR] [LEADER] NETWORK ERROR: Could not send data over Wi-Fi: [Errno 101] Network is unreachable
+2025-10-25 20:40:48,611 [ERROR] [LEADER] NETWORK ERROR: Could not send data over Wi-Fi: [Errno 101] Network is unreachable
+2025-10-25 20:40:48,663 [ERROR] [LEADER] NETWORK ERROR: Could not send data over Wi-Fi: [Errno 101] Network is unreachable
+2025-10-25 20:40:48,715 [ERROR] [LEADER] NETWORK ERROR: Could not send data over Wi-Fi: [Errno 101] Network is unreachable
+2025-10-25 20:40:48,767 [ERROR] [LEADER] NETWORK ERROR: Could not send data over Wi-Fi: [Errno 101] Network is unreachable
+2025-10-25 20:40:48,817 [ERROR] [LEADER] NETWORK ERROR: Could not send data over Wi-Fi: [Errno 101] Network is unreachable
+2025-10-25 20:43:50,721 [INFO] [LEADER] 🛑 Leader script terminated by user.
