@@ -5,7 +5,7 @@
 #
 # Description:
 # This script operates a drone in a "Sentry Mode," awaiting manual engagement of
-# OFFBOARD mode. Once triggered, it executes a precise square flight pattern.
+# OFFBOARD mode. Once triggered, it executes a precise rectangular flight pattern.
 # A key feature is the active P-controller for altitude, which dynamically
 # corrects for any height loss during horizontal movements, ensuring a stable
 # flight path. The pilot retains ultimate control and can abort at any time.
@@ -22,14 +22,17 @@ from mavsdk.telemetry import Position
 # --- Configuration ---
 LOG_FILE = "sentry_mission.log"
 CONNECTION_STRING = "udp://:14540"
-TAKEOFF_ALTITUDE = 4.0
+TAKEOFF_ALTITUDE = 5.0
 FLIGHT_SPEED = 0.8
 POSITION_TOLERANCE = 0.3
-LANDING_DESCEND_SPEED = 0.7
+LANDING_DESCEND_SPEED = 0.5
 LANDING_FLARE_SPEED = 0.2
 LANDING_FLARE_ALTITUDE = 1.5
-SQUARE_SIDE_LENGTH = 10
-ALTITUDE_P_GAIN = 2.0  # Proportional gain for the altitude controller
+# -- NEW: Define rectangle dimensions --
+RECTANGLE_LENGTH = -20.0 # Movement along the North-South axis (forward/backward)
+RECTANGLE_WIDTH = 10.0   # Movement along the East-West axis (right/left)
+# ------------------------------------
+ALTITUDE_P_GAIN = 1.0  # Proportional gain for the altitude controller
 
 class SentryMission:
     """Encapsulates the entire sentry and flight mission logic."""
@@ -174,8 +177,8 @@ class SentryMission:
             await asyncio.sleep(0.1)
 
     async def execute_full_mission(self):
-        """Executes the complete square flight mission."""
-        self.log.info("--- OFFBOARD TRIGGERED: EXECUTING SQUARE MISSION ---")
+        """Executes the complete rectangular flight mission."""
+        self.log.info("--- OFFBOARD TRIGGERED: EXECUTING RECTANGULAR MISSION ---")
 
         self.log.info("Arming system...")
         await self.drone.action.arm()
@@ -185,18 +188,23 @@ class SentryMission:
             self.log.error("Takeoff failed or was aborted.")
             return False
 
-        self.log.info("Capturing home position and calculating square corners...")
+        self.log.info("Capturing home position and calculating rectangle corners...")
         self.home_position = await self.drone.telemetry.position().__anext__()
         p0 = self.home_position
 
-        lat_offset_m = SQUARE_SIDE_LENGTH / 111320.0
-        lon_offset_m = SQUARE_SIDE_LENGTH / (111320.0 * math.cos(math.radians(p0.latitude_deg)))
+        # --- MODIFIED: Use length and width for offsets ---
+        # Calculate latitude offset for LENGTH (North-South movement)
+        lat_offset_m = RECTANGLE_LENGTH / 111320.0
+        # Calculate longitude offset for WIDTH (East-West movement)
+        lon_offset_m = RECTANGLE_WIDTH / (111320.0 * math.cos(math.radians(p0.latitude_deg)))
+        # ----------------------------------------------------
 
         p1 = Position(p0.latitude_deg + lat_offset_m, p0.longitude_deg, p0.absolute_altitude_m, p0.relative_altitude_m)
         p2 = Position(p1.latitude_deg, p1.longitude_deg + lon_offset_m, p0.absolute_altitude_m, p0.relative_altitude_m)
         p3 = Position(p0.latitude_deg, p2.longitude_deg, p0.absolute_altitude_m, p0.relative_altitude_m)
 
-        self.log.info(f"Square corners calculated relative to Home (P0): Lat={p0.latitude_deg:.5f}, Lon={p0.longitude_deg:.5f}")
+        self.log.info(f"Rectangle corners calculated relative to Home (P0): Lat={p0.latitude_deg:.5f}, Lon={p0.longitude_deg:.5f}")
+        self.log.info(f"Rectangle Dimensions: Length={RECTANGLE_LENGTH}m (North), Width={RECTANGLE_WIDTH}m (East)")
 
         corners = {"Corner 1 (Forward)": p1, "Corner 2 (Right)": p2, "Corner 3 (Back)": p3, "Home (P0)": p0}
         for name, target_pos in corners.items():
@@ -211,7 +219,7 @@ class SentryMission:
             self.log.error("Landing failed or was aborted.")
             return False
 
-        self.log.info("--- SQUARE MISSION COMPLETE ---")
+        self.log.info("--- RECTANGULAR MISSION COMPLETE ---")
         return True
 
     async def run(self):

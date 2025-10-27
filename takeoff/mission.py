@@ -20,7 +20,7 @@ from mavsdk.telemetry import Position # <--- NEW: Import Position type
 # --- Configuration (No changes) ---
 LOG_FILE = "sentry_mission.log"
 # ... (all other configuration variables are the same)
-CONNECTION_STRING = "udp://:14540"
+CONNECTION_STRING = "serial:///dev/ttyACM0:921600"
 TAKEOFF_ALTITUDE = 3.0
 HORIZONTAL_DISTANCE = 5.0
 FLIGHT_SPEED = 0.8
