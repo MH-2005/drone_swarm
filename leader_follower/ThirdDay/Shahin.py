@@ -42,12 +42,12 @@ SWARM_SIZE = 3
 UPDATE_INTERVAL_S = 0.1  # seconds between offboard velocity commands (0.1 -> 10 Hz)
 
 # سرعت‌ها
-MAX_CRUISE_VELOCITY_M_S = 0.8
+MAX_CRUISE_VELOCITY_M_S = 1
 TAKEOFF_VELOCITY_M_S = 0.8
 LAND_VELOCITY_M_S = 0.4
 
 # Safety / timeouts
-POSITION_TIMEOUT_S = 40.0  # حداکثر زمان منتظر ماندن برای رسیدن به هدف
+POSITION_TIMEOUT_S = 80.0  # حداکثر زمان منتظر ماندن برای رسیدن به هدف
 ELECTION_TIMEOUT_S = 10.0
 HEALTH_WAIT_TIMEOUT_S = 20.0
 PROXIMITY_THRESHOLD_M = 0
@@ -157,7 +157,7 @@ class FollowerRect:
         self.initial_altitudes = {
             1: -6.0,   # پهپاد ۱ در ارتفاع ۶ متری
             2: -8.0,   # پهپاد ۲ در ارتفاع ۸ متری
-            3: -10.0   # پهپاد ۳ در ارتفاع ۱۰ متری
+            3: -4.0   # پهپاد ۳ در ارتفاع ۴ متری
         }
 
         # Internal tasks references for cleanup
