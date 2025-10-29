@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-follower01.py
+follower01.py (Enhanced Version)
 Follower که:
-- به MAVSDK وصل می‌شود
-- به پورت UDP مشخص گوش می‌دهد (پیش‌فرض 5005) تا تله‌متری لیـدر را دریافت کند
-- پس از آماده‌شدن موقعیت و ورود به OFFBOARD، smooth takeoff و formation follow را انجام می‌دهد
-- لاگ مفصل TX/RX/velocity/target/error می‌دهد تا بتوانی بررسی کنی follower دقیقاً چه کاری می‌کند
+- به MAVSDK وصل می‌شود.
+- به پورت UDP مشخص گوش می‌دهد تا تله‌متری رهبر را دریافت کند.
+- پس از ورود به OFFBOARD، تیکاف نرم و دنبال کردن فرمیشن را انجام می‌دهد.
+- شامل منطق فرود هوشمند و چک‌های ایمنی مداوم برای کنترل خلبان است.
 """
 import asyncio
 import math
@@ -19,21 +19,26 @@ from mavsdk import System
 from mavsdk.offboard import OffboardError, VelocityNedYaw
 
 # -------- CONFIG ----------
-CONNECTION_STRING = "udp://:14542"  # connection to the local PX4 instance for this follower
-LISTENING_PORT = 5005                 # port to listen for leader telemetry
+CONNECTION_STRING = "udp://:14542"  # آدرس اتصال به PX4 این پهپاد
+LISTENING_PORT = 5005               # پورتی که به داده‌های رهبر گوش می‌دهد
 FOLLOWER_ID = f"follower-{uuid.uuid4().hex[:6]}"
 OFFBOARD_PUBLISH_HZ = 20
 SAFETY_ALT_BUFFER = 2.0
 
-# formation control params
+# -- پارامترهای فرود هوشمند --
+LANDING_DESCEND_SPEED = 0.5
+LANDING_FLARE_SPEED = 0.2
+LANDING_FLARE_ALTITUDE = 1.5
+
+# -- پارامترهای کنترل فرمیشن --
 FLIGHT_SPEED = 0.8
 POSITION_P_GAIN = 0.2
 ALTITUDE_P_GAIN = 0.3
 DEADZONE_RADIUS = 0.8
 OFFSET_NORTH_M = -5.0
-OFFSET_EAST_M = 0.0  # default lateral offset if needed
+OFFSET_EAST_M = 0.0
 
-# logging
+# -- تنظیمات لاگ --
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [FOLLOWER] %(message)s")
 log = logging.getLogger("follower01")
 # --------------------------
@@ -43,388 +48,266 @@ class Follower:
         self.drone = System()
         self.leader_data = {}
         self.last_leader_message_time = 0.0
-        self.peers = {}  # id -> {ip, port, last_ts, telemetry}
+        self.peers = {}
         self.last_velocity_command = (0.0, 0.0, 0.0)
         self.is_following = False
         self._stop = False
 
-        # send socket (used for unicast if needed)
-        self.send_sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+    async def _is_still_in_offboard(self):
+        """چک ایمنی: بررسی می‌کند که آیا پهپاد هنوز در حالت OFFBOARD است یا نه."""
         try:
-            self.send_sock.setsockopt(socket.SOL_SOCKET, socket.SO_BROADCAST, 1)
+            current_mode = str(await self.drone.telemetry.flight_mode().__anext__())
+            if current_mode != "OFFBOARD":
+                log.warning(f"خلبان کنترل را پس گرفت! حالت فعلی: {current_mode}")
+                return False
+            return True
         except Exception:
-            pass
-        self.send_target = ("255.255.255.255", LISTENING_PORT)
+            log.error("خطا در دریافت حالت پرواز. برای ایمنی عملیات متوقف می‌شود.")
+            return False
 
     async def run(self):
-        log.info("🚀 Follower starting (SIMULATOR VERSION)...")
+        log.info("🚀 Follower starting...")
         await self.drone.connect(system_address=CONNECTION_STRING)
 
         async for state in self.drone.core.connection_state():
             if state.is_connected:
-                log.info("✅ System connected to simulator")
+                log.info("✅ به کنترلر پرواز متصل شد")
                 break
 
-        # start UDP listener task
-        self._udp_task = asyncio.create_task(self._udp_listener_task())
-
-        # wait for position estimate asynchronously
+        # اجرای وظایف پس‌زمینه
+        asyncio.create_task(self._udp_listener_task())
         await self.wait_for_position_estimate()
+        asyncio.create_task(self._leader_watchdog())
 
-        log.info("⏳ Waiting for OFFBOARD mode and leader data...")
+        log.info("⏳ منتظر حالت OFFBOARD و دریافت داده از رهبر...")
 
-        # start watchdog that monitors leader liveness and triggers actions
-        self._watchdog_task = asyncio.create_task(self._leader_watchdog())
-
-        # main loop: watch flight mode and start follow when OFFBOARD engaged
+        # حلقه اصلی: نظارت بر حالت پرواز
         try:
             async for mode in self.drone.telemetry.flight_mode():
-                # mode is a FlightMode enum string (e.g., "OFFBOARD", "MANUAL", ...)
-                try:
-                    mode_str = str(mode)
-                except Exception:
-                    mode_str = repr(mode)
+                mode_str = str(mode)
                 if mode_str == "OFFBOARD" and not self.is_following:
                     if self._has_leader_data():
-                        log.info("🎛️ OFFBOARD engaged - starting follow sequence")
-                        # start follow
+                        log.info("🎛️ حالت OFFBOARD فعال شد - شروع توالی دنبال کردن")
                         asyncio.create_task(self._start_follow_sequence())
                     else:
-                        log.warning("📡 OFFBOARD but no leader data yet")
-                await asyncio.sleep(0.05)
+                        log.warning("📡 در حالت OFFBOARD اما هنوز داده‌ای از رهبر دریافت نشده است")
+                else:
+                    # تلاش برای ارسال دستور صفر برای آماده‌سازی انتقال روان به Offboard
+                    try:
+                        await self.drone.offboard.set_velocity_ned(VelocityNedYaw(0.0, 0.0, 0.0, 0.0))
+                    except OffboardError:
+                        pass  # این خطا طبیعی است چون هنوز در حالت Offboard نیستیم
+                
+                await asyncio.sleep(0.1)
                 if self._stop:
                     break
-        except asyncio.CancelledError:
-            pass
-        except Exception as e:
-            log.error(f"Main loop error: {e}")
         finally:
             await self._cleanup()
 
     async def wait_for_position_estimate(self):
-        """Async wait until position estimate OK (avoid run_until_complete)."""
-        try:
-            async for health in self.drone.telemetry.health():
-                if health.is_global_position_ok:
-                    log.info("✅ Position estimate OK")
-                    return
-        except asyncio.CancelledError:
-            return
-        except Exception as e:
-            log.error(f"Error while waiting for position estimate: {e}")
+        """منتظر می‌ماند تا موقعیت GPS معتبر شود."""
+        async for health in self.drone.telemetry.health():
+            if health.is_global_position_ok:
+                log.info("✅ موقعیت GPS معتبر است")
+                return
 
     async def _udp_listener_task(self):
-        """Simple non-blocking recvfrom loop that updates leader/presence data."""
+        """به طور مداوم به پیام‌های UDP از رهبر گوش می‌دهد."""
         with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as sock:
             sock.setblocking(False)
             sock.bind(('', LISTENING_PORT))
-            log.info(f"📡 Listening for leader on UDP port {LISTENING_PORT}")
+            log.info(f"📡 در حال گوش دادن به رهبر روی پورت UDP {LISTENING_PORT}")
             while not self._stop:
                 try:
                     data, addr = sock.recvfrom(4096)
-                    sender_ip, sender_port = addr
-                    try:
-                        payload = json.loads(data.decode('utf-8'))
-                    except Exception as e:
-                        log.debug(f"Malformed UDP from {sender_ip}:{sender_port} -> {e}")
-                        await asyncio.sleep(0.01)
-                        continue
-
-                    sid = payload.get("id")
-                    tele = payload.get("telemetry", {}) or {}
-                    seq = payload.get("seq")
-                    ts = payload.get("timestamp")
-                    # record peer network info
-                    if sid:
-                        self.peers[sid] = {"ip": sender_ip, "port": sender_port, "last_ts": time.time(), "telemetry": tele}
-                    # if leader payload, update leader_data
-                    if payload.get("sender_type") == "leader" or tele:
-                        # If leader message structure differs, adapt here
-                        self.leader_data = tele
+                    payload = json.loads(data.decode('utf-8'))
+                    
+                    if payload.get("sender_type") == "leader":
+                        self.leader_data = payload.get("telemetry", {})
                         self.last_leader_message_time = time.time()
-
-                    # LOG reception
-                    lat = tele.get("latitude_deg")
-                    lon = tele.get("longitude_deg")
-                    alt = tele.get("relative_altitude_m")
-                    in_air = tele.get("is_in_air")
-                    log.info(f"RX from {sender_ip}:{sender_port} id={sid} seq={seq} ts={ts} lat={lat} lon={lon} alt={alt} in_air={in_air}")
-
+                        # لاگ کردن پیام دریافتی برای دیباگ
+                        # log.info(f"RX from {addr[0]}: seq={payload.get('seq')}")
                 except BlockingIOError:
-                    # no data currently
                     pass
                 except Exception as e:
-                    log.error(f"❌ UDP error: {e}")
+                    log.error(f"❌ خطای UDP: {e}")
                 await asyncio.sleep(0.01)
 
     def _has_leader_data(self):
+        """چک می‌کند آیا داده تازه از رهبر موجود است یا نه."""
         return (time.time() - self.last_leader_message_time) < 2.0 and 'latitude_deg' in self.leader_data
 
     async def _leader_watchdog(self):
-        """Monitors leader presence and logs state; if leader lost long enough, executes safe fallback."""
-        lost_count = 0
+        """نظارت می‌کند که ارتباط با رهبر قطع نشده باشد."""
         while not self._stop:
-            if not self._has_leader_data():
-                lost_count += 1
-                if lost_count == 1:
-                    log.warning("📡 No fresh leader data")
-                # if leader missing for prolonged time -> safe fallback
-                if lost_count > 50:  # ~0.5s with 0.01 sleep? tune as needed
-                    log.error("Leader missing for extended period -> executing safe stop")
-                    await self._execute_safe_stop()
-                    # optionally break or keep trying election logic
-                    # break
-            else:
-                lost_count = 0
-            await asyncio.sleep(0.01)
+            if self.is_following and not self._has_leader_data():
+                log.error("ارتباط با رهبر برای مدت طولانی قطع شد! اجرای توقف ایمن.")
+                await self._execute_safe_stop()
+            await asyncio.sleep(0.5)
 
     async def _start_follow_sequence(self):
-        """Sequence: arm, initial setpoint, offboard start, takeoff, follow."""
-        if self.is_following:
-            return
+        """توالی کامل عملیات: Arm، شروع Offboard، تیکاف و دنبال کردن."""
+        if self.is_following: return
         self.is_following = True
         try:
-            log.info(">>> Starting follow sequence")
-            # ensure global position ok (should already be true)
-            async for h in self.drone.telemetry.health():
-                if h.is_global_position_ok:
-                    break
-
-            # Arm
-            log.info("🔋 Arming...")
+            log.info(">>> شروع توالی دنبال کردن")
             await self.drone.action.arm()
-            await asyncio.sleep(0.3)
-
-            # initial setpoint then offboard.start()
+            
             await self.drone.offboard.set_velocity_ned(VelocityNedYaw(0.0, 0.0, 0.0, 0.0))
-            await asyncio.sleep(0.12)
-            try:
-                await self.drone.offboard.start()
-                log.info("✅ Offboard started")
-            except OffboardError as e:
-                log.error(f"Offboard start failed: {e}")
-                raise
+            await asyncio.sleep(0.2)
+            await self.drone.offboard.start()
+            log.info("✅ حالت Offboard شروع شد")
 
-            # start offboard publisher
             self._offboard_task = asyncio.create_task(self._offboard_publisher())
 
-            # compute takeoff altitude relative to leader telemetry (if available)
             leader_alt = float(self.leader_data.get("relative_altitude_m", 0.0) or 0.0)
             takeoff_alt = max(3.0, leader_alt + SAFETY_ALT_BUFFER)
             await self.smooth_takeoff(takeoff_alt)
 
-            # formation follow loop
             await self._formation_follow_loop()
-
         except Exception as e:
-            log.error(f"Error in follow sequence: {e}")
+            log.error(f"خطا در توالی دنبال کردن: {e}")
         finally:
             self.is_following = False
-            # stop publisher and offboard
-            if hasattr(self, "_offboard_task") and self._offboard_task:
+            if hasattr(self, "_offboard_task"):
                 self._offboard_task.cancel()
-                try:
-                    await self._offboard_task
-                except asyncio.CancelledError:
-                    pass
             try:
                 await self.drone.offboard.stop()
-            except Exception:
-                pass
-            log.info("<<< Follow sequence ended")
+            except OffboardError as e:
+                log.warning(f"خطا در توقف Offboard: {e}")
+            log.info("<<< توالی دنبال کردن پایان یافت")
 
     async def _offboard_publisher(self):
-        """Sends last_velocity_command at a steady rate to ensure PX4 receives it."""
+        """آخرین دستور سرعت را به طور مداوم برای پهپاد ارسال می‌کند."""
         interval = 1.0 / OFFBOARD_PUBLISH_HZ
-        try:
-            while True:
-                vx, vy, vz = self.last_velocity_command
-                try:
-                    await self.drone.offboard.set_velocity_ned(VelocityNedYaw(vx, vy, vz, 0.0))
-                except Exception as e:
-                    log.debug(f"Offboard set_velocity_ned failed (publisher): {e}")
-                await asyncio.sleep(interval)
-        except asyncio.CancelledError:
-            return
+        while True:
+            vx, vy, vz = self.last_velocity_command
+            try:
+                await self.drone.offboard.set_velocity_ned(VelocityNedYaw(vx, vy, vz, 0.0))
+            except OffboardError:
+                pass # اگر حالت Offboard متوقف شده باشد، این خطا طبیعی است
+            await asyncio.sleep(interval)
 
     async def smooth_takeoff(self, target_altitude):
-        log.info(f"🛫 Smooth takeoff to {target_altitude:.1f} m")
-        try:
-            start = time.time()
+        log.info(f"🛫 تیکاف نرم تا ارتفاع {target_altitude:.1f} متر")
+        pos = await self.drone.telemetry.position().__anext__()
+        cur_alt = pos.relative_altitude_m
+        while cur_alt < target_altitude - 0.2:
+            if not await self._is_still_in_offboard(): return
+
             pos = await self.drone.telemetry.position().__anext__()
             cur_alt = pos.relative_altitude_m
-            while cur_alt < target_altitude - 0.2 and time.time() - start < 30:
-                pos = await self.drone.telemetry.position().__anext__()
-                cur_alt = pos.relative_altitude_m
-                remaining = target_altitude - cur_alt
-                if remaining > 2.0:
-                    speed = 0.5
-                elif remaining > 0.5:
-                    speed = 0.35
-                else:
-                    speed = 0.15
-                log.info(f"Takeoff: cur_alt={cur_alt:.2f} target={target_altitude:.2f} speed={speed:.2f}")
-                await self._set_smooth_velocity(0.0, 0.0, -speed)
-                await asyncio.sleep(0.1)
-            await self._set_smooth_velocity(0.0, 0.0, 0.0)
-            log.info("✅ Takeoff complete")
-        except Exception as e:
-            log.error(f"Takeoff error: {e}")
-            raise
+            remaining = target_altitude - cur_alt
+            speed = 0.5 if remaining > 2.0 else 0.3
+            self.last_velocity_command = (0.0, 0.0, -speed)
+            await asyncio.sleep(0.1)
+        
+        self.last_velocity_command = (0.0, 0.0, 0.0)
+        log.info("✅ تیکاف کامل شد")
 
     async def _formation_follow_loop(self):
-        log.info("🎯 Entering formation follow loop")
-        start_time = time.time()
+        log.info("🎯 ورود به حلقه دنبال کردن فرمیشن")
         while True:
-            try:
-                if not self._has_leader_data():
-                    log.warning("No leader data - holding")
-                    await self._set_smooth_velocity(0.0, 0.0, 0.0)
-                    await asyncio.sleep(0.1)
-                    continue
+            if not await self._is_still_in_offboard():
+                await self._execute_safe_stop()
+                return
 
-                # if leader landed -> land
-                if not self.leader_data.get("is_in_air", True):
-                    log.info("Leader landed -> landing too")
-                    await self.smooth_land()
-                    return
-
-                # build deterministic slots from known peers + self
-                active = [nid for nid, info in self.peers.items() if time.time() - info['last_ts'] <= 3.0]
-                if FOLLOWER_ID not in active:
-                    active.append(FOLLOWER_ID)
-                active = sorted(set(active))
-                total = len(active)
-                active.sort()
-                my_index = active.index(FOLLOWER_ID)
-                offset_index = my_index - (total - 1) / 2.0
-                offset_east = offset_index * 3.0
-                offset_north = OFFSET_NORTH_M
-
-                # compute target pos from leader telemetry
-                leader_lat = float(self.leader_data.get("latitude_deg", 0.0))
-                leader_lon = float(self.leader_data.get("longitude_deg", 0.0))
-                leader_alt = float(self.leader_data.get("relative_altitude_m", 0.0))
-
-                lat_offset_deg = offset_north / 111320.0
-                lon_offset_deg = offset_east / (111320.0 * math.cos(math.radians(leader_lat)))
-                target_lat = leader_lat + lat_offset_deg
-                target_lon = leader_lon + lon_offset_deg
-                target_alt = leader_alt
-
-                # current position
-                cur = await self.drone.telemetry.position().__anext__()
-                err_n = (target_lat - cur.latitude_deg) * 111320.0
-                err_e = (target_lon - cur.longitude_deg) * 111320.0 * math.cos(math.radians(cur.latitude_deg))
-                err_alt = target_alt - cur.relative_altitude_m
-
-                # compute velocities
-                vx, vy, vz = self._calculate_smooth_velocity(err_n, err_e, err_alt)
-
-                # LOG target & errors
-                log.info(f"Target lat={target_lat:.6f} lon={target_lon:.6f} alt={target_alt:.2f}")
-                log.info(f"ERR n={err_n:.2f} m e={err_e:.2f} m alt={err_alt:.2f} m -> cmd vx={vx:.2f}, vy={vy:.2f}, vz={vz:.2f}")
-
-                await self._set_smooth_velocity(vx, vy, vz)
+            if not self._has_leader_data():
+                log.warning("داده‌ای از رهبر نیست - در حال شناوری")
+                self.last_velocity_command = (0.0, 0.0, 0.0)
                 await asyncio.sleep(0.1)
+                continue
 
-            except Exception as e:
-                log.error(f"Formation loop error: {e}")
-                await asyncio.sleep(0.1)
+            if not self.leader_data.get("is_in_air", True):
+                log.info("رهبر فرود آمد -> در حال فرود...")
+                await self.smart_land()
+                return
 
-    def _calculate_smooth_velocity(self, error_north, error_east, error_alt):
-        distance_2d = math.sqrt(error_north ** 2 + error_east ** 2)
-        if distance_2d < DEADZONE_RADIUS and abs(error_alt) < 0.5:
-            return 0.0, 0.0, 0.0
-        vel_north = max(-FLIGHT_SPEED, min(FLIGHT_SPEED, error_north * POSITION_P_GAIN))
-        vel_east = max(-FLIGHT_SPEED, min(FLIGHT_SPEED, error_east * POSITION_P_GAIN))
-        vel_alt = error_alt * ALTITUDE_P_GAIN
-        # convert up to down sign: positive down for VelocityNedYaw
-        vz = max(-0.5, min(0.5, -vel_alt))
-        return vel_north, vel_east, vz
+            # محاسبه موقعیت هدف بر اساس آفست‌ها
+            leader_lat = self.leader_data["latitude_deg"]
+            leader_lon = self.leader_data["longitude_deg"]
+            leader_alt = self.leader_data["relative_altitude_m"]
 
-    async def _set_smooth_velocity(self, vx, vy, vz):
-        try:
-            smooth_factor = 0.3
-            cvx, cvy, cvz = self.last_velocity_command
-            svx = cvx * (1 - smooth_factor) + vx * smooth_factor
-            svy = cvy * (1 - smooth_factor) + vy * smooth_factor
-            svz = cvz * (1 - smooth_factor) + vz * smooth_factor
+            lat_offset_deg = OFFSET_NORTH_M / 111320.0
+            lon_offset_deg = OFFSET_EAST_M / (111320.0 * math.cos(math.radians(leader_lat)))
+            
+            target_lat = leader_lat + lat_offset_deg
+            target_lon = leader_lon + lon_offset_deg
+            target_alt = leader_alt
 
-            # log commanded velocities (debug)
-            log.debug(f"CMD-vel request vx={vx:.2f}, vy={vy:.2f}, vz={vz:.2f} -> smoothed vx={svx:.2f}, vy={svy:.2f}, vz={svz:.2f}")
+            # محاسبه خطا و دستور سرعت
+            cur = await self.drone.telemetry.position().__anext__()
+            err_n = (target_lat - cur.latitude_deg) * 111320.0
+            err_e = (target_lon - cur.longitude_deg) * 111320.0 * math.cos(math.radians(cur.latitude_deg))
+            err_alt = target_alt - cur.relative_altitude_m
 
-            self.last_velocity_command = (svx, svy, svz)
-            # immediate send (publisher also running)
-            try:
-                await self.drone.offboard.set_velocity_ned(VelocityNedYaw(svx, svy, svz, 0.0))
-            except Exception as e:
-                log.debug(f"Immediate set_velocity_ned failed (will rely on publisher): {e}")
+            vx, vy, vz = self._calculate_velocity(err_n, err_e, err_alt)
+            self.last_velocity_command = (vx, vy, vz)
+            
+            await asyncio.sleep(1.0 / OFFBOARD_PUBLISH_HZ)
 
-        except Exception as e:
-            log.error(f"❌ Velocity set error: {e}")
+    def _calculate_velocity(self, err_n, err_e, err_alt):
+        dist_2d = math.sqrt(err_n**2 + err_e**2)
+        if dist_2d < DEADZONE_RADIUS:
+            vx, vy = 0.0, 0.0
+        else:
+            vx = max(-FLIGHT_SPEED, min(FLIGHT_SPEED, err_n * POSITION_P_GAIN))
+            vy = max(-FLIGHT_SPEED, min(FLIGHT_SPEED, err_e * POSITION_P_GAIN))
 
-    async def smooth_land(self):
-        log.info("🛬 Starting smooth landing...")
-        try:
-            start = time.time()
-            pos = await self.drone.telemetry.position().__anext__()
-            current_alt = pos.relative_altitude_m
-            while current_alt > 0.3 and time.time() - start < 60:
-                pos = await self.drone.telemetry.position().__anext__()
-                current_alt = pos.relative_altitude_m
-                if current_alt > 3.0:
-                    speed = 0.3
-                elif current_alt > 1.0:
-                    speed = 0.18
-                else:
-                    speed = 0.08
-                log.info(f"Landing: cur_alt={current_alt:.2f} speed={speed:.2f}")
-                await self._set_smooth_velocity(0.0, 0.0, speed)
-                await asyncio.sleep(0.1)
-            await self._set_smooth_velocity(0.0, 0.0, 0.0)
-            await asyncio.sleep(1.0)
-            try:
+        vz = max(-0.5, min(0.5, -err_alt * ALTITUDE_P_GAIN))
+        return vx, vy, vz
+
+    async def smart_land(self):
+        log.info("🛬 اجرای فرود هوشمند...")
+        last_altitude = -1
+        no_alt_change_start_time = None
+
+        while True:
+            if not await self._is_still_in_offboard():
+                await self._execute_safe_stop()
+                return
+
+            current_pos = await self.drone.telemetry.position().__anext__()
+            current_altitude = current_pos.relative_altitude_m
+            speed = LANDING_DESCEND_SPEED if current_altitude > LANDING_FLARE_ALTITUDE else LANDING_FLARE_SPEED
+            self.last_velocity_command = (0.0, 0.0, speed)
+
+            is_landed_telemetry = await self.drone.telemetry.landed_state().__anext__() == "ON_GROUND"
+
+            if abs(current_altitude - last_altitude) < 0.05:
+                if no_alt_change_start_time is None: no_alt_change_start_time = time.time()
+            else:
+                no_alt_change_start_time = None
+            last_altitude = current_altitude
+            
+            is_landed_logic = (no_alt_change_start_time is not None and time.time() - no_alt_change_start_time > 2.0)
+
+            if is_landed_telemetry and is_landed_logic:
+                log.info("✅ تماس با زمین تایید شد.")
+                self.last_velocity_command = (0.0, 0.0, 0.0)
+                await asyncio.sleep(1.0)
                 await self.drone.action.disarm()
-            except Exception:
-                pass
-            log.info("✅ Landing complete")
-        except Exception as e:
-            log.error(f"Landing error: {e}")
-            raise
+                return
+            
+            await asyncio.sleep(0.2)
 
     async def _execute_safe_stop(self):
-        log.info("Executing safe stop: zero setpoint & hold")
-        try:
-            await self.drone.offboard.set_velocity_ned(VelocityNedYaw(0.0, 0.0, 0.0, 0.0))
-        except Exception:
-            pass
-        try:
-            await self.drone.offboard.stop()
-        except Exception:
-            pass
+        log.info("اجرای توقف ایمن: شناوری در محل")
+        self.last_velocity_command = (0.0, 0.0, 0.0)
         try:
             await self.drone.action.hold()
-        except Exception:
-            pass
+        except Exception as e:
+            log.warning(f"اجرای Hold ناموفق بود: {e}")
 
     async def _cleanup(self):
-        log.info("Cleaning up follower resources...")
+        log.info("پاک‌سازی منابع...")
         self._stop = True
-        try:
-            await self._execute_safe_stop()
-        except Exception:
-            pass
-        try:
-            self.send_sock.close()
-        except Exception:
-            pass
-        log.info("Cleanup finished")
-
+        await self._execute_safe_stop()
+        log.info("پایان کار.")
 
 if __name__ == "__main__":
     try:
         follower = Follower()
         asyncio.run(follower.run())
     except KeyboardInterrupt:
-        log.info("Interrupted by user")
+        log.info("عملیات توسط کاربر متوقف شد")

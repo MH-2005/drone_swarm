@@ -21,16 +21,16 @@ from mavsdk.telemetry import Position
 
 # --- Configuration ---
 LOG_FILE = "sentry_mission.log"
-CONNECTION_STRING = "udp://:14540"
-TAKEOFF_ALTITUDE = 5.0
+CONNECTION_STRING = "serial:///dev/ttyACM0:921600"
+TAKEOFF_ALTITUDE = 6.0
 FLIGHT_SPEED = 0.8
 POSITION_TOLERANCE = 0.3
-LANDING_DESCEND_SPEED = 0.5
+LANDING_DESCEND_SPEED = 0.4
 LANDING_FLARE_SPEED = 0.2
-LANDING_FLARE_ALTITUDE = 1.5
+LANDING_FLARE_ALTITUDE = 3
 # -- NEW: Define rectangle dimensions --
-RECTANGLE_LENGTH = -20.0 # Movement along the North-South axis (forward/backward)
-RECTANGLE_WIDTH = 10.0   # Movement along the East-West axis (right/left)
+RECTANGLE_LENGTH = -15.0 # Movement along the North-South axis (forward/backward)
+RECTANGLE_WIDTH = 6.0   # Movement along the East-West axis (right/left)
 # ------------------------------------
 ALTITUDE_P_GAIN = 1.0  # Proportional gain for the altitude controller
 
